@@ -25,15 +25,6 @@
     
       @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
     
-    .tmblr-lightbox {display:none;}
-    .tmblr-lightbox img {display:none;}
-    .lightbox-caption {display:none;}
-    .lightbox-image {display:none;}
-    .vignette {display:none;}
-    .iframe-controls--desktop {display:none;}
-    .tmblr-iframe-compact .tmblr-iframe--unified-controls {display: none;}
-    tumblr_controls, .tmblr-iframe{display:none;}
-    
     ::-webkit-scrollbar{
         height:6px;
         width:6px;
@@ -60,7 +51,7 @@
       100% {transform: translateX(0);}
     }
     
-    html {
+    :root {
       --bg: #24292e;
       --bg-panel: #24292e;
       --color-headings: #fff;
@@ -1080,17 +1071,17 @@
         const html = document.querySelector("html")
         const checkbox = document.querySelector("input[name=theme]")
 
-        function getStyle(element, style) { 
-          window
-            .getComputedStyle(element)
-            .getPropertyValue(style);
+        function getStyle(name) { 
+          return window
+            .getComputedStyle(document.documentElement)
+            .getPropertyValue(name);
         }
 
         const initialColors = {
-          bg: getStyle(html, "--bg"),
-          bgPanel: getStyle(html, "--bg-panel"),
-          colorHeadings: getStyle(html, "--color-headings"),
-          colorText: getStyle(html, "--color-text"),
+          bg: getStyle("--bg"),
+          bgPanel: getStyle("--bg-panel"),
+          colorHeadings: getStyle("--color-headings"),
+          colorText: getStyle("--color-text"),
         }
 
         const lightMode = {
@@ -1124,10 +1115,10 @@
         checkbox.addEventListener("change", ({target}) => {
           if (target.checked) {
             changeColors(lightMode);
-            createOrEditLocalStorage('mode','lightMode');
+            //createOrEditLocalStorage('mode','lightMode');
           } else {
             changeColors(initialColors);
-            createOrEditLocalStorage('mode','initialColors');
+            //createOrEditLocalStorage('mode','initialColors');
           }
         })
 
