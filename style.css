@@ -5,6 +5,8 @@
     --bg-panel: #24292e;
     --color-headings: #fff;
     --color-text: #f2f2f2;
+    --black: black;
+    --white: white;
 }
 
 ::-webkit-scrollbar{
@@ -18,8 +20,8 @@
 ::-webkit-scrollbar-track {background:var(--bg);}
 
 ::selection {
-    color:black;
-    background:white;
+    color:var(--black);
+    background:var(--white);
 }
 
 @keyframes slideInLeft {

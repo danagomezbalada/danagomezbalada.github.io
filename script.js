@@ -40,6 +40,8 @@ $(document).ready(function(){
     bgPanel: getStyle("--bg-panel"),
     colorHeadings: getStyle("--color-headings"),
     colorText: getStyle("--color-text"),
+    black: getStyle("--black"),
+    white: getStyle("--white"),
     }
 
     const lightMode = {
@@ -47,6 +49,8 @@ $(document).ready(function(){
     bgPanel: "#ffff",
     colorHeadings: "#3664FF",
     colorText: "#B5B5B5",
+    black: "#000000",
+    white: "#9eb4ff",
     }
 
     function changeColors(colors) {
