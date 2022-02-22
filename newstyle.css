@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
+    
+:root {
+    --contact-light:none;
+    --contact-dark:block;
+    --bg: #2f363d;
+    --bg-sidebar: #24292e;
+    --color-headings: #fff;
+    --color-text: #f2f2f2; /*#f2f2f2*/
+    --color-text2: #dedede;
+    --color-text3: #ebebeb;
+    --color-white: white;
+    --select: black;
+    --select-bg: white;
+    --social-icons: rgba(255,255,255,0.7);
+    --content-subtitle: rgba(255,255,255,0.9);
+}
+
+::-webkit-scrollbar{
+    height:6px;
+    width:6px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:var(--color-headings);}
+
+::-webkit-scrollbar-track {background:var(--bg);}
+
+::selection {
+    color:var(--select);
+    background:var(--select-bg);
+}
+    
+body {
+    margin:0;
+    padding:0;
+    font-family:'Raleway',sans-serif;
+    background-color: var(--bg);
+}
+
+header {
+    padding-top: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+nav {
+    align-self: flex-end;
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+@media only screen and (max-width:768px){
+    nav {
+        flex-flow: column wrap;
+        row-gap: 10px;
+    }
+}
+
+
+/* Theme toggle switch */
+.toggle {
+    position: relative;
+    width: 65px;
+    margin-top: 5px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+#switch {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.toggle-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 30px;
+}
+.toggle-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.toggle-inner:before, .toggle-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 25px;
+    padding: 0;
+    line-height: 25px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.toggle-inner:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f185";
+    font-weight: 900;
+    padding-left: 10px;
+    background-color: #EBEBEB;
+    color: #2B2B2B;
+}
+.toggle-inner:after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f186";
+    font-weight: 900;
+    padding-right: 10px;
+    background-color: #2B2B2B;
+    color: #E6E6E6;
+    text-align: right;
+}
+.toggle-switch {
+    display: block;
+    width: 25px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 36px;
+    border: 2px solid #999999;
+    border-radius: 30px;
+    transition: all 0.3s ease-in 0s; 
+}
+#switch:checked + .toggle-label .toggle-inner {
+    margin-left: 0;
+}
+#switch:checked + .toggle-label .toggle-switch {
+    right: 0px; 
+}

@@ -1,5 +1,5 @@
-$(document).ready(function(){
-   // Functions for cookies
+$(document).ready(function () {
+    // Functions for cookies
     function setCookie(name, value, days) {
         var expires = "";
         if (days) {
@@ -26,13 +26,13 @@ $(document).ready(function(){
     }
 
     // Dark & light mode variables and functions
-    const html = document.querySelector("html")
-    const checkbox = document.querySelector("input[name=theme]")
+    const html = document.querySelector("html");
+    const checkbox = $('#switch');
 
     function getStyle(name) { 
-    return window
-        .getComputedStyle(document.documentElement)
-        .getPropertyValue(name);
+        return window
+            .getComputedStyle(document.documentElement)
+            .getPropertyValue(name);
     }
 
     const initialColors = {
@@ -54,7 +54,7 @@ $(document).ready(function(){
     const lightMode = {
         contactLight: "block",
         contactDark: "none",
-        bg: "#f2f2f2",
+        bg: "#EBEBEB",
         bgSidebar: "#ffff",
         colorHeadings: "#7237a3",
         colorText: "#000000",
@@ -70,60 +70,32 @@ $(document).ready(function(){
     function changeColors(colors) {
         var transformKey = key => 
         "--" + key.replace(/([A-Z])/, "-$1").toLowerCase();
-    
+
         Object.keys(colors).map(key => 
             html.style.setProperty(transformKey(key), colors[key]) 
         );
     }
 
     // When user changes light/dark mode
-    checkbox.addEventListener("change", ({target}) => {
-    if (target.checked) {
-        setCookie('colors', 'light', 7);
-        changeColors(lightMode);
-    } else {
-        setCookie('colors', 'dark', 7);
-        changeColors(initialColors);
-    }
-    })
-
-    // When user selects a new language
-    $('#lang-switch').change(function () {
-        var lang = $(this).val();
-        setCookie('lang', lang, 7);
-        $('[lang]').hide();
-        $('[lang="' + lang + '"]').show();
+    checkbox.change(function() {
+        if (this.checked) {
+            setCookie('colors', 'light', 7);
+            changeColors(lightMode);
+        } else {
+            setCookie('colors', 'dark', 7);
+            changeColors(initialColors);
+        }
     });
 
-    // Function to run on page load
     $(document).ready(function () {
         // Set colors
         var colorsCookie = getCookie('colors');
         if ((colorsCookie && colorsCookie == 'dark') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        changeColors(initialColors);
+            changeColors(initialColors);
         }
         else {
-        checkbox.checked = true;
-        changeColors(lightMode);
-        }
-        
-        // Set language
-        $('[lang]').hide();
-        var langCookie = getCookie('lang');
-        if (langCookie)
-            $('#lang-switch').val(langCookie).change();
-        else{
-            const langs = [];
-            $('#lang-switch option').each(function() {
-                langs.push($(this).val());
-            });
-            
-            var current = navigator.language.split('-')[0];
-            if (langs.includes(current))
-                $('#lang-switch').val(current).change();
-            else
-                $('#lang-switch').val("en").change();
+            checkbox.checked = true;
+            changeColors(lightMode);
         }
     });
-}); 
-
+});
