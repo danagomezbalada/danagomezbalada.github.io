@@ -24,118 +24,164 @@
         </script>
     </head>
     <body>
-        <header>
-            <h1>Dana Gomez Balada</h1>
-            <nav>
-                <form class="lang-selector">
-                    <label for="lang-switch">
-                        <i class="fa fa-earth" aria-hidden="true"></i>
-                    </label>
-                    <div class="select">
-                        <select id="lang-switch">
-                            <option value="es" selected>Español</option>
-                            <option value="en">English</option>
-                            <option value="ca">Català</option>
-                        </select>
-                        <span class="focus"></span>
+        <div id="container">
+            <header>
+                <h1>Dana Gomez Balada</h1>
+                <nav>
+                    <form class="lang-selector">
+                        <label for="lang-switch">
+                            <i class="fa fa-earth" aria-hidden="true"></i>
+                        </label>
+                        <div class="select">
+                            <select id="lang-switch">
+                                <option value="es" selected>Español</option>
+                                <option value="en">English</option>
+                                <option value="ca">Català</option>
+                            </select>
+                            <span class="focus"></span>
+                        </div>
+                    </form>
+    
+                    <div class="toggle">
+                        <input id="switch" type="checkbox" name="theme" checked>
+                        <label for="switch" class="toggle-label">
+                            <span class="toggle-inner"></span>
+                            <span class="toggle-switch"></span>
+                        </label>
                     </div>
-                </form>
-
-                <div class="toggle">
-                    <input id="switch" type="checkbox" name="theme" checked>
-                    <label for="switch" class="toggle-label">
-                        <span class="toggle-inner"></span>
-                        <span class="toggle-switch"></span>
-                    </label>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <aside>
-                <article>
-                    <p>&copy; 2022 Dana Gomez Balada</p>
-                    <h1>Bio part blablabla</h1>
-                </article>
-                <article>
-                    <p>Social links, etc...</p>
-                </article>
-            </aside>
-            <section>
-                <article>
-                    <h2>Work experience</h2>
-                    <div class="item" lang="es">
-                        <h3>Comunicación y Administración de redes sociales</h3>
-                        <span>Consejo Comarcal de la Cerdaña | Septiembre 2021 - Presente</span>
-                        <ul>
-                            <li>Gestión de los perfiles de redes sociales del Consejo Comarcal de la Cerdaña</li>
-                            <li>Redacción de notas de prensa y contacto con los medios de comunicación</li>
-                            <li>Apoyo al Consejo con la elaboración de materiales de comunicación</li>
-                            <li>Elaboración de contenido de la página web del Consejo Comarcal</li>
-                        </ul>
-                      </div>
-                      <div class="item" lang="en">
-                        <h3>Communications & Social Media Management</h3>
-                        <span>Regional Council of Cerdanya | September 2021 - Present</span>
-                        <ul>
-                            <li>Management of the social network profiles of the Regional Council of Cerdanya</li>
-                            <li>Writing press releases and contacting the media</li>
-                            <li>Support to the Council with the development of communication materials</li>
-                            <li>Elaboration of content for the Regional Council's web page</li>
-                        </ul>
-                      </div>
-                      <div class="item" lang="ca">
-                        <h3>Comunicació i Administració de xarxes socials</h3>
-                        <span>Consell Comarcal de la Cerdanya | Setembre 2021 - Present</span>
-                        <ul>
-                            <li>Gestió dels perfils de xarxes socials del Consell Comarcal de la Cerdanya</li>
-                            <li>Redacció de notes de premsa i contacte amb els mitjans de comunicació</li>
-                            <li>Suport al Consell amb l’elaboració de materials de comunicació</li>
-                            <li>Elaboració de contingut de la pàgina web del Consell Comarcal</li>
-                        </ul>
-                      </div>
-
-                      <div class="item" lang="es">
-                        <h3>Desarrolladora de Software en prácticas</h3>
-                        <span>SpacePal EU | Mayo 2021 - Julio 2021</span>
-                        <ul>
-                            <li>Programación Python (utilizando: pandas, open3d, numpy, matplotlib, etc...)</li>
-                            <li>Análisis de datos de pointclouds (imágenes 3D con puntos)</li>
-                            <li>Mejorado el código original (Orientación a Objetos, UML).</li>
-                            <li>Arreglados errores y bugs, añadidas mejoras en el código para mejorar la velocidad / integridad de los datos.</li>
-                            <li>Git y GitLab, control de versión, trabajo en equipo.</li>
-                        </ul>
-                        <p>Trabajé en un proyecto que analiza los datos obtenidos de una alcantarilla en forma de pointcloud, georeferenciándolo, detectando la obertura del agujero, detectando el nivel del suelo, y dividiendo la alcantarilla en varios segmentos útiles para determinar la altura y el diámetro de cada segmento.</p>
-                      </div>
-                      <div class="item" lang="en">
-                        <h3>Software Developer Intern</h3>
-                        <span>SpacePal EU | May 2021 - July 2021</span>
-                        <ul>
-                            <li>Python programming (worked with: pandas, open3d, numpy, matplotlib, etc..)</li>
-                            <li>Data analysis of pointclouds (3D images with points)</li>
-                            <li>Improved original code by using OOP and UML.</li>
-                            <li>Fixed bugs and issues, added minor improvements for speed / data integrity.</li>
-                            <li>Worked with Git and GitLab, version control, teamwork.</li>
-                        </ul>
-                        <p>Worked on a project that analyses the data obtained from a sewer in pointcloud form, by georeferencing it, detecting the manhole opening, detecting the groundlevel, and segmenting the sewer into various segments useful to determine the height and diameter of each segment.</p>
-                      </div>
-                      <div class="item" lang="ca">
-                        <h3>Desenvolupadora de Software en pràctiques</h3>
-                        <span>SpacePal EU | Maig 2021 - Juliol 2021</span>
-                        <ul>
-                            <li>Programació Python (utilizant: pandas, open3d, numpy, matplotlib, etc...)</li>
-                            <li>Anàlisi de dades de pointclouds (imatges 3D amb punts)
-                            <li>Millorat el codi original (Orientació a Objectes, UML).</li>
-                            <li>Arreglats errors i bugs, afegides millores en el codi per millorar la velocitat / integritat de les dades.</li>
-                            <li>Git i GitLab, control de versió, treball en equip.</li>
-                        </ul>
-                        <p>Vaig treballar en un projecte que analitza les dades obtingudes d'una claveguera en forma de pointcloud, georeferenciant-lo, detectant l'obertura del forat, detectant el nivell del terra, i dividint la claveguera en varis segments útils per a determinar l'altura i el diàmetre de cada segment.</p>
-                      </div>
-                </article>
-                <article>
-                    <h2>Studies etcc</h2>
-                </article>
-            </section>
-        </main>
+                </nav>
+            </header>
+    
+            <main>
+                <aside>
+                    <article>
+                        <h1>Bio part blablabla</h1>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                    <article>
+                        <p>Social links, etc...</p>
+                    </article>
+                </aside>
+                <section>
+                    <article>
+                        <h2>Work experience</h2>
+                        <div class="item" lang="es">
+                            <h3>Comunicación y Administración de redes sociales</h3>
+                            <span>Consejo Comarcal de la Cerdaña | Septiembre 2021 - Presente</span>
+                            <ul>
+                                <li>Gestión de los perfiles de redes sociales del Consejo Comarcal de la Cerdaña</li>
+                                <li>Redacción de notas de prensa y contacto con los medios de comunicación</li>
+                                <li>Apoyo al Consejo con la elaboración de materiales de comunicación</li>
+                                <li>Elaboración de contenido de la página web del Consejo Comarcal</li>
+                            </ul>
+                          </div>
+                          <div class="item" lang="en">
+                            <h3>Communications & Social Media Management</h3>
+                            <span>Regional Council of Cerdanya | September 2021 - Present</span>
+                            <ul>
+                                <li>Management of the social network profiles of the Regional Council of Cerdanya</li>
+                                <li>Writing press releases and contacting the media</li>
+                                <li>Support to the Council with the development of communication materials</li>
+                                <li>Elaboration of content for the Regional Council's web page</li>
+                            </ul>
+                          </div>
+                          <div class="item" lang="ca">
+                            <h3>Comunicació i Administració de xarxes socials</h3>
+                            <span>Consell Comarcal de la Cerdanya | Setembre 2021 - Present</span>
+                            <ul>
+                                <li>Gestió dels perfils de xarxes socials del Consell Comarcal de la Cerdanya</li>
+                                <li>Redacció de notes de premsa i contacte amb els mitjans de comunicació</li>
+                                <li>Suport al Consell amb l’elaboració de materials de comunicació</li>
+                                <li>Elaboració de contingut de la pàgina web del Consell Comarcal</li>
+                            </ul>
+                          </div>
+    
+                          <div class="item" lang="es">
+                            <h3>Desarrolladora de Software en prácticas</h3>
+                            <span>SpacePal EU | Mayo 2021 - Julio 2021</span>
+                            <ul>
+                                <li>Programación Python (utilizando: pandas, open3d, numpy, matplotlib, etc...)</li>
+                                <li>Análisis de datos de pointclouds (imágenes 3D con puntos)</li>
+                                <li>Mejorado el código original (Orientación a Objetos, UML).</li>
+                                <li>Arreglados errores y bugs, añadidas mejoras en el código para mejorar la velocidad / integridad de los datos.</li>
+                                <li>Git y GitLab, control de versión, trabajo en equipo.</li>
+                            </ul>
+                            <p>Trabajé en un proyecto que analiza los datos obtenidos de una alcantarilla en forma de pointcloud, georeferenciándolo, detectando la obertura del agujero, detectando el nivel del suelo, y dividiendo la alcantarilla en varios segmentos útiles para determinar la altura y el diámetro de cada segmento.</p>
+                          </div>
+                          <div class="item" lang="en">
+                            <h3>Software Developer Intern</h3>
+                            <span>SpacePal EU | May 2021 - July 2021</span>
+                            <ul>
+                                <li>Python programming (worked with: pandas, open3d, numpy, matplotlib, etc..)</li>
+                                <li>Data analysis of pointclouds (3D images with points)</li>
+                                <li>Improved original code by using OOP and UML.</li>
+                                <li>Fixed bugs and issues, added minor improvements for speed / data integrity.</li>
+                                <li>Worked with Git and GitLab, version control, teamwork.</li>
+                            </ul>
+                            <p>Worked on a project that analyses the data obtained from a sewer in pointcloud form, by georeferencing it, detecting the manhole opening, detecting the groundlevel, and segmenting the sewer into various segments useful to determine the height and diameter of each segment.</p>
+                          </div>
+                          <div class="item" lang="ca">
+                            <h3>Desenvolupadora de Software en pràctiques</h3>
+                            <span>SpacePal EU | Maig 2021 - Juliol 2021</span>
+                            <ul>
+                                <li>Programació Python (utilizant: pandas, open3d, numpy, matplotlib, etc...)</li>
+                                <li>Anàlisi de dades de pointclouds (imatges 3D amb punts)
+                                <li>Millorat el codi original (Orientació a Objectes, UML).</li>
+                                <li>Arreglats errors i bugs, afegides millores en el codi per millorar la velocitat / integritat de les dades.</li>
+                                <li>Git i GitLab, control de versió, treball en equip.</li>
+                            </ul>
+                            <p>Vaig treballar en un projecte que analitza les dades obtingudes d'una claveguera en forma de pointcloud, georeferenciant-lo, detectant l'obertura del forat, detectant el nivell del terra, i dividint la claveguera en varis segments útils per a determinar l'altura i el diàmetre de cada segment.</p>
+                          </div>
+                    </article>
+                    <article>
+                        <h2>Studies etcc</h2>
+                    </article>
+                    <article>
+                        <h2>Studies etcc</h2>
+                    </article>
+                    <article>
+                        <h2>Studies etcc</h2>
+                    </article>
+                    <article>
+                        <h2>Studies etcc</h2>
+                    </article>
+                </section>
+            </main>
+            <footer>
+                <p>&copy; 2022 Dana Gomez Balada</p>
+            </footer>
+        </div>
     </body>
 </html>
