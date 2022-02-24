@@ -43,11 +43,13 @@ $(document).ready(function () {
             document.body.className = "dark-theme";
             console.log("unchecked");
             $('#switch').prop("checked", false);
+            console.log($('#switch').prop("checked"));
         }
         else {
             document.body.className = "light-theme";
             console.log("checked v1");
             $('#switch').prop("checked", true);
+            console.log($('#switch').prop("checked"));
         }
     });
 });
