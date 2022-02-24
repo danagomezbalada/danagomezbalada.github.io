@@ -47,17 +47,25 @@ $(document).ready(function () {
     $(document).ready(function () {
         // Set colors
         var colorsCookie = getCookie('colors');
-        if ((colorsCookie && colorsCookie == 'dark') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.body.className = "dark-theme";
-            console.log("unchecked");
-            $('#switch').prop("checked", false);
-            console.log($('#switch').prop("checked"));
+        if (colorsCookie){
+            if (colorsCookie == 'dark'){
+                document.body.className = "dark-theme";
+                $('#switch').prop("checked", false);
+            }
+            else {
+                document.body.className = "light-theme";
+                $('#switch').prop("checked", true);
+            }
         }
         else {
-            document.body.className = "light-theme";
-            console.log("checked v1");
-            $('#switch').prop("checked", true);
-            console.log($('#switch').prop("checked"));
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+                document.body.className = "dark-theme";
+                $('#switch').prop("checked", false);
+            }
+            else {
+                document.body.className = "light-theme";
+                $('#switch').prop("checked", true);
+            }
         }
 
         // Set language
