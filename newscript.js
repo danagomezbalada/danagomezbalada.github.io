@@ -42,12 +42,12 @@ $(document).ready(function () {
         if ((colorsCookie && colorsCookie == 'dark') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.body.className = "dark-theme";
             console.log("unchecked");
-            $('#switch').checked = false;
+            $('#switch').prop( "checked", false);
         }
         else {
             document.body.className = "light-theme";
             console.log("checked");
-            $('#switch').checked = true;
+            $('#switch').prop( "checked", true);
         }
     });
 });
