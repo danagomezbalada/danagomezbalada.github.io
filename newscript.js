@@ -36,6 +36,14 @@ $(document).ready(function () {
         }
     });
 
+    // When user selects a new language
+    $('#lang-switch').change(function () {
+        var lang = $(this).val();
+        setCookie('lang', lang, 7);
+        $('[lang]').hide();
+        $('[lang="' + lang + '"]').show();
+    });
+
     $(document).ready(function () {
         // Set colors
         var colorsCookie = getCookie('colors');
@@ -50,6 +58,24 @@ $(document).ready(function () {
             console.log("checked v1");
             $('#switch').prop("checked", true);
             console.log($('#switch').prop("checked"));
+        }
+
+        // Set language
+        $('[lang]').hide();
+        var langCookie = getCookie('lang');
+        if (langCookie)
+            $('#lang-switch').val(langCookie).change();
+        else{
+            const langs = [];
+            $('#lang-switch option').each(function() {
+                langs.push($(this).val());
+            });
+            
+            var current = navigator.language.split('-')[0];
+            if (langs.includes(current))
+                $('#lang-switch').val(current).change();
+            else
+                $('#lang-switch').val("en").change();
         }
     });
 });
