@@ -41,10 +41,13 @@ $(document).ready(function () {
         var colorsCookie = getCookie('colors');
         if ((colorsCookie && colorsCookie == 'dark') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.body.className = "dark-theme";
-            $('#switch').checked = true;
+            console.log("unchecked");
+            $('#switch').checked = false;
         }
         else {
             document.body.className = "light-theme";
+            console.log("checked");
+            $('#switch').checked = true;
         }
     });
 });
