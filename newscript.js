@@ -44,6 +44,7 @@ $(document).ready(function () {
         $('[lang="' + lang + '"]').show();
     });
 
+    // Function to run on page load
     $(document).ready(function () {
         // Set colors
         var colorsCookie = getCookie('colors');

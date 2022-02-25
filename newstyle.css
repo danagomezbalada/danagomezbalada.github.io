@@ -79,16 +79,36 @@ body {
 
 header {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: right;
     align-items: center;
     background: var(--bg-sidebar);
 }
 
+header .print-button {
+    background-color: var(--bg);
+    transition: all 0.2s ease-in;
+    color: var(--color-text);
+    
+    display: block;
+    margin-right: 20px;
+    width: fit-content;
+    border: 2px solid gray;
+    border-radius: 0.25em;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1.1; 
+}
+header .print-button:hover {
+    background-color: grey;
+    transition: all 0.2s ease-in;
+}
+
 nav {
     margin-right: 40px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     column-gap: 20px;
@@ -161,7 +181,7 @@ nav .lang-selector .select:after {
     
 nav .lang-selector select, .lang-selector .select:after {
     grid-area: select;
-    color:var(--color-white);
+    color: var(--color-white);
 }
 
 nav .lang-selector select:focus + .lang-selector .focus {
@@ -290,19 +310,6 @@ aside article {
     margin: 0 auto;
 }
 
-aside .title h1 {
-    font-weight: 700;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    font-size: 28px;
-}
-aside .title h2 {
-    font-size: 20px;
-    margin: 0 0 30px 0;
-    font-weight: 300;
-    letter-spacing: 1.6px;
-}
-
 aside .avatar img {
     width: 140px;
     border-radius: 50%;
@@ -314,6 +321,19 @@ aside .avatar img {
 aside .avatar img:hover {
     transform: scale(1.15) translateY(10px);
     transition: all 0.35s ease;
+}
+
+aside .title h1 {
+    font-weight: 700;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+aside .title h2 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-weight: 300;
+    letter-spacing: 1.6px;
 }
 
 aside .desc {
@@ -395,8 +415,9 @@ aside .print-social {
 section {
     will-change: transform;
     animation: 1s ease-out 0s 1 slideInLeft;
-    color:var(--color-text3);
-    background:var(--bg);
+    padding: 30px 0 0 60px;
+    color: var(--color-text3);
+    background: var(--bg);
 
     flex-grow: 1;
     overflow-y: auto;
@@ -405,11 +426,81 @@ section {
     flex-flow: column;
 }
 
-section article {
-    margin: 10px 10px;
+section .print-links {
+    display: none;
+}
+
+section .article{
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section .article .title {
+    margin-bottom: -20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+section .article .title .icon{
+    float: left;
+    color: var(--color-text2);
+    font-size: 26px;
+    margin-right: 15px;
+}
+section .article .title h2{
+    color: var(--color-white);
+}
+
+section .article .item h3{
+    color: var(--color-text2);
+    margin-bottom: 5px;
+}
+section .article .item span{
+    color: var(--content-subtitle);
+    font-weight: 300;
+}
+section .article .item p, section .article .item ul li{
+    margin-top: 0;
+    width: 90%;
+    letter-spacing: 1.1px;
+    line-height: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+section .article .item a{
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 80%;
+    font-style: italic;
+}
+section .article .item a:hover{
+    text-decoration: underline;
+    opacity: 100%;
+}
+
+section .article .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .article .list .item {
+    flex: 1;
+    flex-basis: calc(33.3333% - 2%);
 }
 
 /**/
+
+footer {
+    background-color: var(--bg-sidebar);
+    color: var(--color-text2);
+
+    padding: 5px 0;
+    font-size: 10px;
+    position: relative;
+    text-align: center;
+}
 
 
 /* Mobile responsive */
@@ -442,6 +533,10 @@ section article {
         overflow-y: hidden;
     }
 
+    aside .social{
+        margin-bottom: 15px;
+    }
+
     section {
         padding:20px;
         
@@ -458,38 +553,50 @@ section article {
 }
 
 @media print {
+    #container {
+        display: block;
+        color: black !important;
+    }
 
-    .sidebar{
+    header {
+        display:none;
+    }
+
+    main {
+        flex: auto;
+        flex-flow: column nowrap;
+        row-gap: 10px;
+    }
+
+    aside {
         -webkit-box-shadow:none;
         box-shadow:none;
         margin-right:0;
         width:100%;
-        position:relative;
-        color:black;
-    }
-    
-    .sidebar form{
-        display:none;
-    }
-    
-    aside{
-        position:relative;
-        top:0%;
-        left:0%;
+        position: relative;
         color:black;
         font-size:12pt;
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
     }
-    
+
+    aside > * {
+        flex: 1;
+        flex-basis: 33.3333%;
+    }
+
+    aside .desc {
+        flex-basis: 70%;
+        color:black;
+    }
+
     aside .title h1, aside .title h2 {
         font-size:16pt;
     }
     
-    aside .avatar img{
-        width:90px;
-    }
-    
     aside .desc p{
-        color:black;
     }
     
     aside .contact {
@@ -508,63 +615,42 @@ section article {
         display:inline-block;
     }
     
-    .content{
+    section {
         margin-left:0;
         position:relative;
         padding:20px;
         color:black;
     }
-
-    .content .credits {
-        display:none;
-    }
     
-    .content .title {
+    section .article {
         font-size:85%;
         padding-bottom:0;
     }
     
-    .content .print-button {
-        display:none;
-    }
-    
-    .content .print-links {
+    section .print-links {
         display:inline;
     }
     
-    .content .title span {
+    section .article span {
         color:black !important;
     }
     
-    .content .title .item h3 span{
+    section .article .item h3 span{
         display:block;
     }
     
-    .content .title .item p{
+    section .article .item p{
         width:100%;
         text-align:justify;
     }
     
-    .content .wrap {
-        display:inline-block;
-        width:30%;
-        margin:0;
-        padding:0 5pt 0 5pt;
-        vertical-align: top;
-        font-size:80%;
-    }
-    
-    .content .title .certification {
+    section .article .certification {
         padding:0;
         margin:0;
     }
-    
-    .content .title .w33, .content .title .w22{
-        width:40%;
-        display:inline-block;
-        padding:0 5pt 0 5pt;
-        vertical-align: top;
-        font-size:87%;
+
+    footer {
+        display: none;
     }
 
 }
