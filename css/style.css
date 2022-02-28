@@ -3,14 +3,14 @@
 .light-theme {
     --contact-light: block;
     --contact-dark: none;
-    --bg: #EBEBEB;
-    --bg-sidebar: #ffff;
-    --color-headings: #7237a3;
-    --color-text: #000000;
-    --color-text2: #000000;
-    --color-text3: #000000;
+    --bg: #ebebeb;
+    --bg-sidebar: #e0d8e7;
+    --color-headings: #4c3261;
+    --color-text: black;
+    --color-text2: #2e173b;
+    --color-text3: #444444;
     --color-white: black;
-    --select: #000000;
+    --select: black;
     --select-bg: #9eb4ff;
     --social-icons: rgba(0,0,0,0.7);
     --content-subtitle: rgba(0,0,0,0.9);
@@ -79,7 +79,7 @@ body {
 
 header {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: right;
     align-items: center;
     background: var(--bg-sidebar);
@@ -158,7 +158,7 @@ nav .lang-selector .select {
     padding: 0.25em 0.5em;
     font-size: 1.05rem;
     cursor: pointer;
-    line-height: 1.1; 
+    line-height: 1.1;
     margin:auto;
     background-color: var(--bg);
     transition:all 0.2s ease-in;
@@ -351,15 +351,27 @@ aside .contact {
     display: var(--contact-dark);
 }
 aside .contact img {
-    display: block;
-    margin: 0 auto;
+    max-width: 13.5em;
+    object-fit: contain;
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 aside .contact-white {
     display: var(--contact-light);
 }
 aside .contact-white img{
-    display: block;
-    margin: 0 auto;
+    max-width: 13.5em;
+    object-fit: contain;
+    
+    image-rendering: -moz-crisp-edges;
+    image-rendering:   -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 aside .social{
@@ -482,6 +494,7 @@ section .article .item a:hover{
 
 section .article .list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -517,6 +530,25 @@ footer {
         z-index: 10;
         height: 50px;
     }
+
+    header .print-button {
+        font-size: 0;
+        padding: 5px 15px;
+    }
+    header .print-button:before {
+        font-family: "Font Awesome 6 Free";
+        content: "\f02f  / \f019";
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    nav {
+        margin-right: 3%;
+    }
+
+    nav .lang-selector .select {
+        width: 90px;
+    }
     
     main {
         margin-top: 50px;
@@ -529,7 +561,6 @@ footer {
     aside {
         -webkit-box-shadow:none;
         box-shadow:none;
-
         overflow-y: hidden;
     }
 
@@ -539,119 +570,7 @@ footer {
 
     section {
         padding:20px;
-        
         overflow-y: hidden;
     }
-}
-/**/
-
-
-/* Print CSS */
-@page  { 
-    size: auto;
-    margin: 25mm 10mm 25mm 10mm;  
-}
-
-@media print {
-    #container {
-        display: block;
-        color: black !important;
-    }
-
-    header {
-        display:none;
-    }
-
-    main {
-        flex: auto;
-        flex-flow: column nowrap;
-        row-gap: 10px;
-    }
-
-    aside {
-        -webkit-box-shadow:none;
-        box-shadow:none;
-        margin-right:0;
-        width:100%;
-        position: relative;
-        color:black;
-        font-size:12pt;
-
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-    }
-
-    aside > * {
-        flex: 1;
-        flex-basis: 33.3333%;
-    }
-
-    aside .desc {
-        flex-basis: 70%;
-        color:black;
-    }
-
-    aside .title h1, aside .title h2 {
-        font-size:16pt;
-    }
-    
-    aside .desc p{
-    }
-    
-    aside .contact {
-        display: none;
-    }
-    
-    aside .contact-white{
-        display: block;
-    }
-    
-    aside .social{
-        display:none;
-    }
-    
-    aside .print-social {
-        display:inline-block;
-    }
-    
-    section {
-        margin-left:0;
-        position:relative;
-        padding:20px;
-        color:black;
-    }
-    
-    section .article {
-        font-size:85%;
-        padding-bottom:0;
-    }
-    
-    section .print-links {
-        display:inline;
-    }
-    
-    section .article span {
-        color:black !important;
-    }
-    
-    section .article .item h3 span{
-        display:block;
-    }
-    
-    section .article .item p{
-        width:100%;
-        text-align:justify;
-    }
-    
-    section .article .certification {
-        padding:0;
-        margin:0;
-    }
-
-    footer {
-        display: none;
-    }
-
 }
 /**/

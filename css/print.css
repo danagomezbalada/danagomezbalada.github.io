@@ -1,0 +1,125 @@
+/* Print CSS */
+@page  { 
+    size: auto;
+    margin: 25mm 10mm 25mm 10mm;  
+}
+
+@media print {
+    #container {
+        display: block;
+        color: black !important;
+    }
+
+    header {
+        display:none;
+    }
+
+    main {
+        flex: auto;
+        flex-flow: column nowrap;
+        row-gap: 10px;
+    }
+
+    aside {
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        margin-right:0;
+        width:100%;
+        position: relative;
+        color:black !important;
+        font-size:12pt;
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    aside > * {
+        flex: 1;
+        flex-basis: 33.3333%;
+    }
+
+    aside .desc {
+        flex-basis: 70%;
+        color:black;
+    }
+    aside .desc p {
+        color: black !important;
+    }
+
+    aside .title h1, aside .title h2 {
+        font-size:16pt;
+    }
+    
+    aside .contact {
+        display: none;
+    }
+    
+    aside .contact-white{
+        display: block;
+    }
+    
+    aside .social{
+        display:none;
+    }
+    aside .social span {
+        color: black !important;
+    }
+    
+    aside .print-social {
+        display:inline-block;
+    }
+    
+    section {
+        margin-left:0;
+        position:relative;
+        padding:20px;
+        color:black !important;
+    }
+    
+    section .article {
+        font-size:85%;
+        padding-bottom:0;
+    }
+
+    section .article .title .icon {
+        color: black !important;
+    }
+    section .article .title h2{
+        color: black !important;
+    }
+    
+    section .print-links {
+        display:inline;
+    }
+    
+    section .article span {
+        color:black !important;
+    }
+    
+    section .article .item h3{
+        color: black !important;
+    }
+    section .article .item h3 span{
+        display:block;
+    }
+    section .article .item span{
+        color: black !important;
+    }
+    
+    section .article .item p{
+        width:100%;
+        text-align:justify;
+    }
+    
+    section .article .certification {
+        padding:0;
+        margin:0;
+    }
+
+    footer {
+        display: none;
+    }
+
+}
+/**/
