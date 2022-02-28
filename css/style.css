@@ -4,7 +4,7 @@
     --contact-light: block;
     --contact-dark: none;
     --bg: #ebebeb;
-    --bg-sidebar: #e0d8e7;
+    --bg-sidebar: #d8d8d8;
     --color-headings: #4c3261;
     --color-text: black;
     --color-text2: #2e173b;
@@ -35,18 +35,19 @@
 }
 
 ::-webkit-scrollbar{
-    height:6px;
-    width:6px;
-    background:inherit;
+    height: 6px;
+    width: 6px;
+    background: inherit;
 }
 
-::-webkit-scrollbar-thumb {background:var(--color-headings);}
+::-webkit-scrollbar-thumb {background: var(--color-headings);}
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active {background: var(--color-text3);}
 
-::-webkit-scrollbar-track {background:transparent;}
+::-webkit-scrollbar-track {background: transparent;}
 
 ::selection {
-    color:var(--select);
-    background:var(--select-bg);
+    color: var(--select);
+    background: var(--select-bg);
 }
 
 @keyframes slideInLeft {
