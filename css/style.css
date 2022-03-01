@@ -186,7 +186,7 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
 .select-hide {
     display: none;
 }
-.select-items div:hover, .same-as-selected {
+.select-items div:hover {
     background-color: grey;
 }
 
@@ -231,6 +231,9 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
     font-family: Trebuchet, Arial, sans-serif;
     font-weight: bold;
     box-sizing: border-box;
+    
+    transition: all 0.2s ease-in;
+    will-change: transform;
 }
 .toggle-inner:before {
     font-family: "Font Awesome 6 Free";
@@ -240,6 +243,9 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
     background-color: #EBEBEB;
     color: #2B2B2B;
 }
+.toggle-label:hover .toggle-inner:before, .toggle-label:active .toggle-inner:before {
+    background-color: grey;
+}
 .toggle-inner:after {
     font-family: "Font Awesome 6 Free";
     content: "\f186";
@@ -248,6 +254,9 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
     background-color: #2B2B2B;
     color: #E6E6E6;
     text-align: right;
+}
+.toggle-label:hover .toggle-inner:after, .toggle-label:active .toggle-inner:after {
+    background-color: grey;
 }
 .toggle-switch {
     display: block;
