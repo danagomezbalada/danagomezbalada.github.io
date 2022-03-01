@@ -54,11 +54,38 @@
     0% {transform: translateX(-100%);}
     100% {transform: translateX(0);}
 }
-
 @keyframes slideInLeft2 {
     0% {transform: translateX(-100%);}
     50% {transform: translateX(-100%);}
     100% {transform: translateX(0);}
+}
+@keyframes menuAnim {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+@keyframes itemsAnim {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    15% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    50% {
+        transform: rotateX(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
 }
 
 html, body {
@@ -143,14 +170,10 @@ nav .lang-selector .custom-select {
     border: 2px solid gray;
     border-radius: 0.25em;
     background-color: var(--bg);
-
+    
     transition: all 0.2s ease-in;
     will-change: transform;
     z-index: 10;
-}
-nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus {
-    transition: all 0.2s ease-in;
-    background-color: grey;
 }
 
 .select-selected:after {
@@ -165,6 +188,9 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
 }
 .select-selected.select-arrow-active:after {
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.select-selected:hover, .select-selected:focus {
+    background-color: grey;
 }
 
 .select-items div, .select-selected {
@@ -182,11 +208,19 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
     left: 0;
     right: 0;
     border: 2px solid gray;
+    animation: menuAnim 300ms ease-in-out forwards;
+    transform-origin: top center;
+    
 }
+.select-items > * {
+    animation: 700ms ease-in-out 0s 1 itemsAnim;
+    transform-origin: top center;
+}
+
 .select-hide {
     display: none;
 }
-.select-items div:hover {
+.select-items div:hover, .same-as-selected {
     background-color: grey;
 }
 
@@ -231,7 +265,7 @@ nav .lang-selector .custom-select:hover, nav .lang-selector .custom-select:focus
     font-family: Trebuchet, Arial, sans-serif;
     font-weight: bold;
     box-sizing: border-box;
-    
+
     transition: all 0.2s ease-in;
     will-change: transform;
 }
