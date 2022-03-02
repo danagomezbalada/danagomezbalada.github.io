@@ -29,10 +29,10 @@ $(document).ready(function () {
     $('#switch').change(function() {
         if (this.checked) {
             setCookie('colors', 'light', 7);
-            document.body.className = "light-theme";
+            $(document.body).attr('class', 'light-theme');
         } else {
             setCookie('colors', 'dark', 7);
-            document.body.className = "dark-theme";
+            $(document.body).attr('class', 'dark-theme');
         }
     });
 
@@ -121,41 +121,74 @@ $(document).ready(function () {
         $('[lang="' + lang + '"]').show();
     });
 
+    // When user scrolls down
+    $('section').scroll(function () {
+        if ($(this).scrollTop() > 250) {
+            $('#scroll-button').show(700);
+        } else {
+            $('#scroll-button').hide(800);
+        }
+    });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 25) {
+            $('#scroll-button').show(700);
+        } else {
+            $('#scroll-button').hide(800);
+        }
+    });
+
+    // When user clicks scroll button
+    $('#scroll-button').click(function (e) {
+        if ($(window).width() >= 768){
+            var section = $('section');
+            section.animate({
+                scrollTop: section.position().top - section.scrollTop()
+            }, 2000);
+        }
+        else {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+        }
+    });
+
     // Function to run on page load
     $(document).ready(function () {
         // Set colors
-        var colorsCookie = getCookie('colors');
+        var colorsCookie = getCookie('colors'), 
+            switchElem = $('#switch'), 
+            docBody = $(document.body);
         if (colorsCookie){
             if (colorsCookie == 'dark'){
-                document.body.className = "dark-theme";
-                $('#switch').prop("checked", false);
+                docBody.attr('class', 'dark-theme');
+                switchElem.prop("checked", false);
             }
             else {
-                document.body.className = "light-theme";
-                $('#switch').prop("checked", true);
+                docBody.attr('class', 'light-theme');
+                switchElem.prop("checked", true);
             }
         }
         else {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-                document.body.className = "dark-theme";
-                $('#switch').prop("checked", false);
+                docBody.attr('class', 'dark-theme');
+                switchElem.prop("checked", false);
             }
             else {
-                document.body.className = "light-theme";
-                $('#switch').prop("checked", true);
+                docBody.attr('class', 'light-theme');
+                switchElem.prop("checked", true);
             }
         }
 
         // Set language
         $('[lang]').hide();
-        var language = "en";
-        var langCookie = getCookie('lang');
+        var language = "en", 
+            langCookie = getCookie('lang');
         if (langCookie)
             language = langCookie;
         else {
             const langs = [];
             $('#lang-switch option').each(function() {
-                langs.push($(this).val());
+                langs.push(this.value);
             });
             
             var current = navigator.language.split('-')[0];
@@ -166,13 +199,14 @@ $(document).ready(function () {
 
         loadLanguageSelector();
         $('#' + language).addClass("same-as-selected");
+        var selected = $('#selected');
         $('#select-container').hover(function () {
-            if ($('#selected').next().hasClass("select-hide")){
-                $('#selected').click();
+            if (selected.next().hasClass("select-hide")){
+                selected.click();
             }
         }, function () {
-            if (!$('#selected').next().hasClass("select-hide")) {
-                $('#selected').click();
+            if (!selected.next().hasClass("select-hide")) {
+                selected.click();
             }
         });
 
@@ -180,6 +214,6 @@ $(document).ready(function () {
     });
 });
 
-// TODO: Add scroll to top button?
 // TODO: Add accordions for extra text in experience and education
+// TODO: Add tabs on section top for CV and Portfolio
 // TODO: Refactor everything to jQuery
