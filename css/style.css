@@ -301,6 +301,11 @@ main {
     overflow: hidden;
 }
 
+abbr[title] {
+    text-decoration-color: var(--color-white);
+    text-decoration-thickness: 0.1px;
+}
+
 /* Sidebar */
 aside {
     will-change: transform;
