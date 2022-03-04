@@ -207,8 +207,6 @@ nav .lang-selector .custom-select {
     background-color: grey;
 }
 
-/**/
-
 /* Theme toggle switch */
 .toggle {
     position: relative;
@@ -294,7 +292,6 @@ nav .lang-selector .custom-select {
 #switch:checked + .toggle-label .toggle-switch {
     right: 0px; 
 }
-/**/
 
 /* Main content */
 main {
@@ -520,8 +517,6 @@ section .article .list .item {
     flex-basis: calc(33.3333% - 2%);
 }
 
-/**/
-
 #scroll-button {
     display: none;
     position: fixed;
@@ -537,7 +532,7 @@ section .article .list .item {
 
     color: var(--color-text);
     background-color: var(--bg-sidebar);
-    will-change: transform;
+    will-change: transform; 
 }
 #scroll-button:hover {
     background-color: grey;
@@ -612,7 +607,6 @@ footer {
         overflow-y: hidden;
     }
 }
-/**/
 
 
 /* Print CSS */
@@ -743,4 +737,3 @@ footer {
     }
 
 }
-/**/
