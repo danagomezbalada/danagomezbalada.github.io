@@ -636,6 +636,14 @@ footer {
         row-gap: 10px;
     }
 
+    abbr[title] {
+        text-decoration: none;
+    }
+
+    details {
+        display: none;
+    }
+
     aside {
         -webkit-box-shadow:none;
         box-shadow:none;
