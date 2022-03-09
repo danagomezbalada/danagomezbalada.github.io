@@ -631,8 +631,7 @@ footer {
     }
 
     main {
-        flex: auto;
-        flex-flow: column nowrap;
+        display: block;
     }
 
     abbr[title] {
@@ -696,13 +695,17 @@ footer {
         position: relative;
         padding: 0 20px;
         color: black !important;
+        display: block;
     }
 
     section .print-links {
         display: inline;
     }
 
-    section .article{padding-bottom: 0;}
+    section .article {
+        padding-bottom: 0;
+        display: block;
+    }
 
     section .article .title{
         font-size: 16px;
@@ -712,8 +715,10 @@ footer {
     }
     
     section .article .item {
+        display: block;
         padding: 0;
         margin: 0;
+        page-break-inside: avoid !important;
     }
     section .article .item > * {color: black !important;}
 
@@ -733,8 +738,8 @@ footer {
         font-size: 11pt;
     }
 
-    section .article .list {
-        
+    section .article .list .item h3{
+        font-size: 11pt;
     }
 
     #scroll-button {display: none !important;}
