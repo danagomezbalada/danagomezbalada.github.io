@@ -36,6 +36,12 @@ $(document).ready(function () {
         }
     });
 
+
+    // When user clicks print button
+    $('#print-button').click(function (){
+        console.log("printing");
+        window.print();
+    });
     
     // Function that loads the custom language selector
     function loadLanguageSelector() {

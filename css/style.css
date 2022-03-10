@@ -100,7 +100,7 @@ header {
     background: var(--bg-sidebar);
 }
 
-header .print-button {
+header #print-button {
     background-color: var(--bg);
     transition: all 0.2s ease-in;
     will-change: transform;
@@ -116,7 +116,7 @@ header .print-button {
     cursor: pointer;
     line-height: 1.1; 
 }
-header .print-button:hover {
+header #print-button:hover {
     background-color: grey;
     transition: all 0.2s ease-in;
 }
@@ -305,9 +305,32 @@ main {
     overflow: hidden;
 }
 
-abbr[title] {
-    text-decoration-color: var(--color-white);
-    text-decoration-thickness: 0.1px;
+abbr {
+    position: relative;
+    border-bottom: 1px dotted var(--color-white);
+}
+abbr::after{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+}
+abbr:hover::after, abbr:active::after {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    width: max-content;
+    content: attr(name);
+
+    margin-left: -5px;
+    padding: 5px 10px;
 }
 
 /* Sidebar */
@@ -458,6 +481,9 @@ section {
     overflow-y: auto;
     height: inherit;
 }
+section hr {
+    margin-right: 80px;
+}
 
 section #main-nav {
     display: flex;
@@ -600,11 +626,11 @@ footer {
         height: 50px;
     }
 
-    header .print-button {
+    header #print-button {
         font-size: 0;
         padding: 5px 15px;
     }
-    header .print-button:before {
+    header #print-button:before {
         font-family: "Font Awesome 6 Free";
         content: "\f019  / \f02f";
         font-weight: 700;
@@ -639,6 +665,9 @@ footer {
 
     section {
         overflow-y: hidden;
+    }
+    section hr {
+        margin-right: 20px;
     }
     section .tabcontent {
         padding:20px;
@@ -730,6 +759,7 @@ footer {
         color: black !important;
         display: block;
     }
+    section hr {display: none;}
     section #main-nav{display: none;}
     section .tabcontent{
         display: block;

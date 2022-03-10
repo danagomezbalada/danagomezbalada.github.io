@@ -18,7 +18,8 @@
         <link rel="stylesheet" type="text/css" href="css\style.min.css"/>
         <script type="text/javascript" src="libs\fontawesome-free-6.0.0-web\js\all.min.js"></script>
         <script type="text/javascript" src="libs\jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="js\script.min.js"></script>
+        <!--<script type="text/javascript" src="js\script.min.js"></script>-->
+        <script type="text/javascript" src="js\script.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-212071384-1"></script>
         <script>
@@ -31,7 +32,7 @@
     <body>
         <div id="container">
             <header>
-                <button class="print-button" onClick="window.print()">
+                <button id="print-button">
                     <span lang="es">Descargar / Imprimir</span>
                     <span lang="en">Download / Print</span>
                     <span lang="ca">Descarregar / Imprimir</span>
@@ -116,8 +117,16 @@
                 </aside>
                 <section>
                     <div id="main-nav">
-                        <button class="tablink" id="btn-curriculum">Curriculum</button>
-                        <button class="tablink" id="btn-portfolio">Portfolio</button>
+                        <button class="tablink" id="btn-curriculum">
+                            <span lang="es">Currículum</span>
+                            <span lang="en">Resume</span>
+                            <span lang="ca">Currículum</span>
+                        </button>
+                        <button class="tablink" id="btn-portfolio">
+                            <span lang="es">Trabajos</span>
+                            <span lang="en">Portfolio</span>
+                            <span lang="ca">Treballs</span>
+                        </button>
                     </div>
                     <div id="curriculum" class="tabcontent">
                         <article class="article">
@@ -129,7 +138,7 @@
                             </div>
                             <div class="item" lang="es">
                               <h3>Comunicación y Administración de redes sociales</h3>
-                              <span>Consejo Comarcal de la Cerdaña | Septiembre 2021 - Presente</span>
+                              <span><strong>Consejo Comarcal de la Cerdaña</strong> | Septiembre 2021 - Presente</span>
                               <ul>
                                   <li>Gestión de los perfiles de redes sociales del Consejo Comarcal de la Cerdaña</li>
                                   <li>Redacción de notas de prensa y contacto con los medios de comunicación</li>
@@ -139,7 +148,7 @@
                             </div>
                             <div class="item" lang="en">
                               <h3>Communications & Social Media Management</h3>
-                              <span>Regional Council of Cerdanya | September 2021 - Present</span>
+                              <span><strong>Regional Council of Cerdanya</strong> | September 2021 - Present</span>
                               <ul>
                                   <li>Management of the social network profiles of the Regional Council of Cerdanya</li>
                                   <li>Writing press releases and contacting the media</li>
@@ -149,7 +158,7 @@
                             </div>
                             <div class="item" lang="ca">
                               <h3>Comunicació i Administració de xarxes socials</h3>
-                              <span>Consell Comarcal de la Cerdanya | Setembre 2021 - Present</span>
+                              <span><strong>Consell Comarcal de la Cerdanya</strong> | Setembre 2021 - Present</span>
                               <ul>
                                   <li>Gestió dels perfils de xarxes socials del Consell Comarcal de la Cerdanya</li>
                                   <li>Redacció de notes de premsa i contacte amb els mitjans de comunicació</li>
@@ -161,7 +170,7 @@
                             
                             <div class="item" lang="es">
                               <h3>Desarrolladora de Software en prácticas</h3>
-                              <span>SpacePal EU | Mayo 2021 - Julio 2021</span>
+                              <span><strong>SpacePal EU</strong> | Mayo 2021 - Julio 2021</span>
                               <ul>
                                   <li>Programación Python (utilizando: pandas, open3d, numpy, matplotlib, etc...)</li>
                                   <li>Análisis de datos de pointclouds (imágenes 3D con puntos)</li>
@@ -173,7 +182,7 @@
                             </div>
                             <div class="item" lang="en">
                               <h3>Software Developer Intern</h3>
-                              <span>SpacePal EU | May 2021 - July 2021</span>
+                              <span><strong>SpacePal EU</strong> | May 2021 - July 2021</span>
                               <ul>
                                   <li>Python programming (worked with: pandas, open3d, numpy, matplotlib, etc..)</li>
                                   <li>Data analysis of pointclouds (3D images with points)</li>
@@ -185,7 +194,7 @@
                             </div>
                             <div class="item" lang="ca">
                               <h3>Desenvolupadora de Software en pràctiques</h3>
-                              <span>SpacePal EU | Maig 2021 - Juliol 2021</span>
+                              <span><strong>SpacePal EU</strong> | Maig 2021 - Juliol 2021</span>
                               <ul>
                                   <li>Programació Python (utilizant: pandas, open3d, numpy, matplotlib, etc...)</li>
                                   <li>Anàlisi de dades de pointclouds (imatges 3D amb punts)
@@ -198,7 +207,7 @@
                             
                             <div class="item" lang="es">
                               <h3>Técnica Informática en prácticas</h3>
-                              <span>Inforcerdanya | Mayo 2019 - Mayo 2020</span>
+                              <span><strong>Inforcerdanya</strong> | Mayo 2019 - Mayo 2020</span>
                               <ul>
                                   <li>Administración e instalación de sistemas operativos.</li>
                                   <li>Detectar y resolver los problemas técnicos de clientes.</li>
@@ -208,7 +217,7 @@
                             </div>
                             <div class="item" lang="en">
                               <h3>I.T. Technician Intern</h3>
-                              <span>Inforcerdanya | May 2019 - May 2020</span>
+                              <span><strong>Inforcerdanya</strong> | May 2019 - May 2020</span>
                               <ul>
                                   <li>Administration and installation of operating systems.</li>
                                   <li>Detect and solve client's technical problems.</li>
@@ -218,7 +227,7 @@
                             </div>
                             <div class="item" lang="ca">
                               <h3>Tècnica Informàtica en pràctiques</h3>
-                              <span>Inforcerdanya | Maig 2019 - Maig 2020</span>
+                              <span><strong>Inforcerdanya</strong> | Maig 2019 - Maig 2020</span>
                               <ul>
                                   <li>Administració i instal·lació de sistemes operatius.</li>
                                   <li>Detectar i resoldre els problemes técnics de clients.</li>
@@ -229,7 +238,7 @@
                             
                             <div class="item" lang="es">
                               <h3>Agente del Círculo de Lectores</h3>
-                              <span>Grupo Planeta | Septiembre 2017 - Marzo 2018</span>
+                              <span><strong>Grupo Planeta</strong> | Septiembre 2017 - Marzo 2018</span>
                               <ul>
                                   <li>Distribuir catálogos y tomar pedidos mensualmente.</li>
                                   <li>Entregar pedidos y productos de belleza al hogar del cliente.</li>
@@ -237,7 +246,7 @@
                             </div>
                             <div class="item" lang="en">
                               <h3>Círculo de Lectores Agent</h3>
-                              <span>Grupo Planeta | September 2017 - March 2018</span>
+                              <span><strong>Grupo Planeta</strong> | September 2017 - March 2018</span>
                               <ul>
                                   <li>Distribute catalogs and take orders monthly.</li>
                                   <li>Deliver orders and beauty products to client's homes.</li>
@@ -245,14 +254,14 @@
                             </div>
                             <div class="item" lang="ca">
                               <h3>Agent del Círculo de Lectores</h3>
-                              <span>Grupo Planeta | Setembre 2017 - Març 2018</span>
+                              <span><strong>Grupo Planeta</strong> | Setembre 2017 - Març 2018</span>
                               <ul>
                                   <li>Distribuir catàlegs i prendre ordres mensualment.</li>
                                   <li>Entregar ordres i productes de bellesa a casa del client.</li>
                               </ul>
                             </div>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-check"></i> 
@@ -268,7 +277,7 @@
                               <p lang="en"><span>September 2021</span> - <a href="files\20210901_Recommendation-letter.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">Original Document</a><span class="print-links"> (Attached)</span></p>
                               <p lang="ca"><span>Setembre 2021</span> - <a href="files\20210901_Recommendation-letter.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">Document Original</a><span class="print-links"> (Adjunt)</span></p>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-graduation-cap"></i>
@@ -278,66 +287,66 @@
                             </div>
                             <div class="item" lang="es">
                                 <h3>UOC (Universidad Abierta de Cataluña)</h3>
-                                <span>Programación de Videojuegos 2D - Curso de Posgrado | 2021 - 2022</span><br>
-                                <span>Japonés A1.1-1.2 | 2018 - 2019</span>
+                                <span><strong>Programación de Videojuegos 2D - Curso de Posgrado</strong> | 2021 - 2022</span><br>
+                                <span><strong>Japonés A1.1-1.2</strong> | 2018 - 2019</span>
                             </div>
                             <div class="item" lang="en">
                                 <h3>UOC (Open University of Catalonia)</h3>
-                                <span>2D Videogame Programming - Postgraduate Course | 2021 - 2022</span><br>
-                                <span>Japanese A1.1-1.2 | 2018 - 2019</span> 
+                                <span><strong>2D Videogame Programming - Postgraduate Course</strong> | 2021 - 2022</span><br>
+                                <span><strong>Japanese A1.1-1.2</strong> | 2018 - 2019</span> 
                             </div>
                             <div class="item" lang="ca">
                                 <h3>UOC (Universitat Oberta de Catalunya)</h3>
-                                <span>Programació de Videojocs 2D - Curs de Postgrau | 2021 - 2022</span><br>
-                                <span>Japonès A1.1-1.2 | 2018 - 2019</span>
+                                <span><strong>Programació de Videojocs 2D - Curs de Postgrau</strong> | 2021 - 2022</span><br>
+                                <span><strong>Japonès A1.1-1.2</strong> | 2018 - 2019</span>
                              </div>
                               
                             <div class="item" lang="es">
                                 <h3>Instituto Joan Brudieu</h3>
-                                <span><abbr title="Curso Formativo de Grado Superior">CFGS</abbr> Desarrollo de Aplicaciones Multiplataforma | 2020 - 2021</span><br>
-                                <span><abbr title="Curso Formativo de Grado Superior">CFGS</abbr> Administración Sistemas Informáticos en Red | 2018-2020</span>
+                                <span><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Desarrollo de Aplicaciones Multiplataforma</strong> | 2020 - 2021</span><br>
+                                <span><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Administración Sistemas Informáticos en Red</strong> | 2018-2020</span>
                                 <!--<p>Explicar?</p>-->
                             </div>
                             <div class="item" lang="en">
                                 <h3>Joan Brudieu High School</h3>
-                                <span><abbr title="Higher National Diploma">HND</abbr> Multiplatform Application Development | 2020 - 2021</span><br>
-                                <span><abbr title="Higher National Diploma">HND</abbr> Network Computer Systems Administration | 2018-2020</span>
+                                <span><strong><abbr name="Higher Education">HE</abbr> Multiplatform Application Development</strong> | 2020 - 2021</span><br>
+                                <span><strong><abbr name="Higher Education">HE</abbr> Network Computer Systems Administration</strong> | 2018-2020</span>
                                 <!--<p>Explicar?</p>-->
                             </div>
                             <div class="item" lang="ca">
                                 <h3>Institut Joan Brudieu</h3>
-                                <span><abbr title="Curs Formatiu de Grau Superior">CFGS</abbr> Desenvolupament d'Aplicacions Multiplataforma | 2020 - 2021</span><br>
-                                <span><abbr title="Curs Formatiu de Grau Superior">CFGS</abbr> Administració de Sistemes Informàtics en Xarxa | 2018-2020</span>
+                                <span><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Desenvolupament d'Aplicacions Multiplataforma</strong> | 2020 - 2021</span><br>
+                                <span><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Administració de Sistemes Informàtics en Xarxa</strong> | 2018-2020</span>
                                 <!--<p>Explicar?</p>-->
                             </div>
                               
                             <div class="item" lang="es">
                                 <h3>EOI (Escuela Oficial de Idiomas)</h3>
-                                <span>Inglés C1 | 2019 - 2020</span>
+                                <span><strong>Inglés C1</strong> | 2019 - 2020</span>
                             </div>
                             <div class="item" lang="en">
                                 <h3>EOI (Official Language School)</h3>
-                                <span>English C1 | 2019 - 2020</span>
+                                <span><strong>English C1</strong> | 2019 - 2020</span>
                             </div>
                             <div class="item" lang="ca">
                                 <h3>EOI (Escola Oficial d'Idiomes)</h3>
-                                <span>Anglés C1 | 2019 - 2020</span>
+                                <span><strong>Anglés C1</strong> | 2019 - 2020</span>
                             </div>
                               
                             <div class="item" lang="es">
                                 <h3>Instituto Pere Borrell</h3>
-                                <span>Bachillerato de Humanidades | 2015 - 2017</span>
+                                <span><strong>Bachillerato de Humanidades</strong> | 2015 - 2017</span>
                             </div>
                             <div class="item" lang="en">
                                 <h3>Pere Borrell High School</h3>
-                                <span>Bachillerato (High School Diploma) | 2015 - 2017</span>
+                                <span><strong>Humanities High School Diploma</strong> | 2015 - 2017</span>
                             </div>
                             <div class="item" lang="ca">
                                 <h3>IES Pere Borrell</h3>
-                                <span>Batxillerat d'Humanitats | 2015 - 2017</span>
+                                <span><strong>Batxillerat d'Humanitats</strong> | 2015 - 2017</span>
                             </div>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-trophy"></i>
@@ -377,7 +386,7 @@
                                 <p lang="ca">Ajuntament de Puigcerdà - <a href="https://bit.ly/festa-estany-2018" target="_blank" rel="noopener noreferrer">Album de fotos</a><span class="print-links"> (bit.ly/festa-estany-2018)</span></p>
                             </div>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-code"></i>
@@ -412,7 +421,7 @@
                                 </div>
                             </div>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-language"></i>
@@ -456,7 +465,7 @@
                                 </div>
                             </div>
                         </article>
-    
+                        <hr>
                         <article class="article">
                             <div class="title">
                                 <i class="icon fa fa-desktop"></i> 
