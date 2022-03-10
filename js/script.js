@@ -160,21 +160,31 @@ $(document).ready(function () {
 
     // When the user clicks on a tab link
     $('.tablink').click(function () {
-        var tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+        $('.tabcontent').each(function () {
+            this.style.display = "none";
+        });
 
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "var(--bg-sidebar)";
-            tablinks[i].disabled = false;
-        }
+        $('.tablink').each(function () {
+            this.style.backgroundColor = "var(--bg-sidebar)";
+            this.disabled = false;
+        });
 
         var pageName = this.id.split("-")[1];
         document.getElementById(pageName).style.display = "block";
         this.style.backgroundColor = "inherit";
         this.disabled = true;
+    });
+
+    // Filter buttons onClick
+    $('.filterbtn').click(function (){
+        $(this).addClass('active').siblings().removeClass('active');
+
+        if (this.id == "all")
+            $('.project .item').show();
+        else {
+            $('.project .item').hide();
+            $('.item.' + this.id).show();
+        }
     });
 
     // Function to run on page load
@@ -235,11 +245,12 @@ $(document).ready(function () {
             }
         });
 
+        // When click anywhere, close the select dropdown
         document.addEventListener("click", closeAllSelect);
-      
+        // Show the CV tab by default
         document.getElementById("btn-curriculum").click();
     });
 });
 
+
 // TODO: Add accordions for extra text in experience and education
-// TODO: Refactor everything to jQuery
