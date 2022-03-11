@@ -180,10 +180,10 @@ $(document).ready(function () {
         $(this).addClass('active').siblings().removeClass('active');
 
         if (this.id == "all")
-            $('.project .item').show();
+            $('.project .item').show(700);
         else {
             $('.project .item').hide();
-            $('.item.' + this.id).show();
+            $('.project .item.' + this.id).show(700);
         }
     });
 
@@ -236,13 +236,15 @@ $(document).ready(function () {
         $('#' + language).addClass("same-as-selected");
         var selected = $('#selected');
         $('#select-container').hover(function () {
-            if (selected.next().hasClass("select-hide")){
-                selected.click();
-            }
+            if (!window.matchMedia("only screen and (max-width: 824px)").matches)
+                if (selected.next().hasClass("select-hide")){
+                    selected.click();
+                }
         }, function () {
-            if (!selected.next().hasClass("select-hide")) {
-                selected.click();
-            }
+            if (!window.matchMedia("only screen and (max-width: 824px)").matches)
+                if (!selected.next().hasClass("select-hide")) {
+                    selected.click();
+                }
         });
 
         // When click anywhere, close the select dropdown

@@ -337,8 +337,6 @@ abbr:hover::after, abbr:active::after {
 aside {
     will-change: transform;
     animation: 2s ease-out 0s 1 slideInLeft2;
-    -webkit-box-shadow:4px 0 5px -2px rgba(94,94,94,0.81);
-    box-shadow:4px 0 5px -2px rgba(94,94,94,0.81);
     color: var(--color-headings);
     background: var(--bg-sidebar);
 
@@ -517,13 +515,13 @@ section .print-links {
     display: none;
 }
 
+/* Curriculum section */
 section .article{
     padding-bottom: 20px;
     display: flex;
     flex-flow: column nowrap;
 }
 
-/* Curriculum section */
 section .article .title {
     margin-bottom: -20px;
     display: flex;
@@ -593,6 +591,22 @@ section .filters .filtergroup .filterbtn:hover {
 section .filters .filtergroup .filterbtn.active {
     background-color: #666;
     color: white;
+}
+
+section .project {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+section .project .item {
+    background-color: white;
+    padding: 10px;
+    will-change: transform; 
 }
 
 /* Other */
@@ -690,6 +704,12 @@ footer {
     section .tabcontent {
         padding:20px;
     }
+    section .project {
+        flex-flow: column nowrap;
+    }
+    section .project > * {
+        width: 100%;
+    }
 }
 
 
@@ -718,8 +738,6 @@ footer {
     }
 
     aside {
-        -webkit-box-shadow: none;
-        box-shadow: none;
         margin-right: 0;
         width: 100%;
         position: relative;
