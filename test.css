@@ -1,17 +1,10 @@
-/*
--------------------------------------------
-  Author: Seyon Rajagopal
-  Copyright (c) 2020 Seyon Rajagopal
-------------------------------------------- 
-*/
-
 * {
     margin: 0;
     padding: 0;
 }
 
 html {
-    background-color: #24252a;
+    background-color: gray;
 }
 
 body {
