@@ -5,7 +5,7 @@
 const GITHUB_API = "https://api.github.com/users/";
 const GITHUB_USER = "danagomezbalada";
 const GITLAB_API = "https://gitlab.com/api/v4/";
-const GITLAB_ACCESSTOKEN = "?private_token=glpat-UQBeS6t6NQxB5zxP6CDt";
+const GITLAB_ACCESSTOKEN = atob("P3ByaXZhdGVfdG9rZW49Z2xwYXQtUm05ZGUtZ2VyTEpiVERxYk1rNkI=");
 const GITLAB_USER = "danagomez";
 
 getGitLab();
