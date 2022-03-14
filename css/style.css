@@ -348,6 +348,7 @@ aside {
     flex-flow: column;
     text-align: center;
 }
+#side-container {margin: auto;}
 
 aside article {
     display: block;
@@ -446,20 +447,18 @@ aside .social ul li a:hover,aside .social ul li a:focus{
     color: var(--color-headings);
     transition: all 0.2s linear;
 }
-
-aside .social span{
-    display: block;
-    margin-top: 2%;
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--color-text);
+aside .social ul li a .icon-bg {
+    background: var(--social-icons);
+    color: var(--bg-sidebar);
+    border-radius: 15%;
+    padding: 3.5px;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.2s linear;
 }
-aside .social span a{
-    color: var(--color-white);
-}
-aside .social span a:hover{
-    opacity: 70%;
-    text-decoration: none;
+aside .social ul li a .icon-bg:hover, aside .social ul li a .icon-bg:focus {
+    background: var(--color-headings);
+    transition: all 0.2s linear;
 }
 
 aside .print-social {
@@ -601,6 +600,23 @@ section .project {
     align-items: center;
     row-gap: 10px;
     column-gap: 10px;
+}
+
+section .project .title {
+    margin-bottom: -20px;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 100%;
+    align-items: center;
+}
+section .project .title .icon{
+    float: left;
+    color: var(--color-text2);
+    font-size: 26px;
+    margin-right: 15px;
+}
+section .project .title h2{
+    color: var(--color-white);
 }
 
 section .project .item {

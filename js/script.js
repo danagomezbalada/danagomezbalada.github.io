@@ -29,8 +29,8 @@ $(document).ready(function () {
     function createDIV(article, url, tags, link_img, name, description, date, language, stars, forks, topics) {
         // Puts repo information into div
         $(".project." + article).append(`
-            <a href='${url}' target='_blank'>
-                <div class='item ${tags}'>
+            <div class='item ${tags}'>
+                <a href='${url}' target='_blank'>
                     ${link_img}
                     <h1 class='title'>${name}</h1>
                     <p class='description'>${description}<br>${date}</p>
@@ -52,7 +52,8 @@ $(document).ready(function () {
                             ${topics}
                         </div>
                     </div>
-                </div>
+                </a>
+            </div>
         `);
     }
     async function getGitLab() {
@@ -80,7 +81,9 @@ $(document).ready(function () {
             var repo_description = "";
             var link_img = `<img>`;
             if (item.name.includes("PEC1")) {
-                repo_description = "UOC PEC 1 Unity 2D Game";
+                repo_description = `<span lang="es">Juego 2D de Unity de la PEC 1 de la UOC</span>
+                <span lang="en">UOC PEC 1 Unity 2D Game</span>
+                <span lang="ca">Joc 2D de Unity de la PEC 1 de la UOC</span>`;
                 link_img = `<iframe frameborder="0" src="https://itch.io/embed/1237915?bg_color=1e1e1e&amp;fg_color=d4d4d4&amp;link_color=87cfd4&amp;border_color=5f5f5f" width="208" height="167"><a href="https://danagomez.itch.io/pec-1-monkey-island">PEC 1 Monkey Island by Dana Gomez</a></iframe>`;
             }
             else if (item.name.includes("PEC2")) {
@@ -133,11 +136,12 @@ $(document).ready(function () {
         }
     });
 
-
     // When user clicks print button
     $('#print-button').click(function (){
-        console.log("printing");
+        $('.tabcontent').css("animation", "none");
+        document.getElementById("btn-curriculum").click();
         window.print();
+        $('.tabcontent').css("animation", "fadeEffect 1s");
     });
     
     // Function that loads the custom language selector
@@ -270,17 +274,26 @@ $(document).ready(function () {
         document.getElementById(pageName).style.display = "block";
         this.style.backgroundColor = "inherit";
         this.disabled = true;
+
+        $('#lang-switch').val($('#lang-switch').val()).change();
     });
 
     // Filter buttons onClick
     $('.filterbtn').click(function (){
         $(this).addClass('active').siblings().removeClass('active');
+        $('.project').show();
+        var id = this.id;
 
-        if (this.id == "all")
+        if (id == "all")
             $('.project .item').show(700);
         else {
             $('.project .item').hide();
-            $('.project .item.' + this.id).show(700);
+            $('.project .item.' + id).show(700);
+
+            $('.project').each(function () {
+                if($(this).find('.' + id).length == 0)
+                    $(this).hide();
+            });
         }
     });
 
@@ -345,7 +358,7 @@ $(document).ready(function () {
         });
 
         getGitLab();
-        //getGithub();
+        getGithub();
 
         // When click anywhere, close the select dropdown
         document.addEventListener("click", closeAllSelect);
