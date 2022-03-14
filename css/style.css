@@ -604,7 +604,7 @@ section .project {
 }
 
 section .project .item {
-    background-color: white;
+    background-color: var(--bg-sidebar);
     padding: 10px;
     will-change: transform; 
 }
