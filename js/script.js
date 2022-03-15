@@ -52,13 +52,13 @@ $(document).ready(function () {
                             ${topics}
                         </div>
                     </div>
-                </a>
+                
             </div>
         `);
     }
     function setDescImg(item) {
         // Function that sets a specific description and image depending on the project, works with language selector
-        let langs = [3], link_img, demo_btn = "";
+        let langs = [3], link_img, demo_link;
 
         if (item.name.includes("PEC")) {
             if (item.name.includes("1")) {
@@ -66,24 +66,28 @@ $(document).ready(function () {
                 langs[1] = "UOC PEC 1 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 1 de la UOC";
                 link_img = "";
+                demo_link = "https://danagomez.itch.io/pec-1-monkey-island";
             }
             else if (item.name.includes("2")) {
                 langs[0] = "Juego 2D de Unity de la PEC 2 de la UOC";
                 langs[1] = "UOC PEC 2 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 2 de la UOC";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1276637?bg_color=444444&amp;fg_color=ffffff&amp;link_color=2ce8f4&amp;border_color=585858" width="208" height="167"><a href="https://danagomez.itch.io/pec-2-super-mario-bros">PEC 2 Super Mario Bros by Dana Gomez</a></iframe>`;
+                link_img = "https://gitlab.com/danagomez/pec2-un-juego-de-plataformas/-/raw/master/Images/Game.png";
+                demo_link = "https://danagomez.itch.io/pec-2-super-mario-bros";
             }
             else if (item.name.includes("3")) {
                 langs[0] = "Juego 2D de Unity de la PEC 3 de la UOC";
                 langs[1] = "UOC PEC 3 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 3 de la UOC";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1315332?bg_color=535353&amp;fg_color=ffffff&amp;link_color=fa5c5c&amp;border_color=575757" width="208" height="167"><a href="https://danagomez.itch.io/pec-3-scorched-earth-worms">PEC 3 Scorched Earth / Worms by Dana Gomez</a></iframe>`;
+                link_img = "https://gitlab.com/danagomez/pec3-un-juego-de-artilleria/-/raw/master/Images/Joc.png";
+                demo_link = "https://danagomez.itch.io/pec-3-scorched-earth-worms";
             }
             else if (item.name.includes("4")) {
                 langs[0] = "Juego 2D de Unity de la PEC 4 de la UOC";
                 langs[1] = "UOC PEC 4 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 4 de la UOC";
                 link_img = "https://gitlab.com/danagomez/pec4-practica-final/-/raw/master/Images/Level1.PNG";
+                demo_link = "https://danagomez.itch.io/pec-4-projecte-final";
             }
         }
         else if (item.name.includes("final_proj")){
@@ -156,6 +160,13 @@ $(document).ready(function () {
         let repo_description = `<span lang="es">${langs[0]}</span>
         <span lang="en">${langs[1]}</span>
         <span lang="ca">${langs[2]}</span>`;
+
+        let demo_btn = "";
+        if (demo_link){
+            demo_btn = `<a class="demo-button" href="${demo_link}" target="_blank" rel="noopener noreferrer">
+            Play on itch.io
+            </a>`;
+        }
 
         return [repo_description, `<img src="${link_img}">${demo_btn}`];
     }
