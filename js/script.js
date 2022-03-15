@@ -107,8 +107,10 @@ $(document).ready(function () {
         const GITHUB_USER = "danagomezbalada";
         resp = await fetch(GITHUB_API + GITHUB_USER + "/repos");
         respData = await resp.json();
-    
+        
         for (const item of respData) {
+            console.log(item);
+
             var tags = "";
             item.topics.forEach(element => {
                 tags+= element + " ";
@@ -117,7 +119,7 @@ $(document).ready(function () {
             var link_img = "";
             var repo_description = "";
     
-            var date_parts = item.updated_at.split("T")[0].split("-").reverse();
+            var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
             
     

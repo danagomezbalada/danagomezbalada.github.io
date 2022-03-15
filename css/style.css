@@ -759,14 +759,17 @@ footer {
         position: relative;
         color:black !important;
         font-size:12pt;
-
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
         max-width: none;
     }
 
-    aside > * {
+    #side-container {
+        margin: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    #side-container > * {
         flex: 1;
         flex-basis: 33.3333%;
     }
@@ -783,7 +786,7 @@ footer {
     }
 
     aside .desc {
-        flex-basis: 70%;
+        flex-basis: 70% !important;
         color: black;
     }
     aside .desc p {
