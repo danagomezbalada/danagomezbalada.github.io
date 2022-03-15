@@ -58,14 +58,14 @@ $(document).ready(function () {
     }
     function setDescImg(item) {
         // Function that sets a specific description and image depending on the project, works with language selector
-        let langs = [3], link_img;
+        let langs = [3], link_img, demo_btn = "";
 
         if (item.name.includes("PEC")) {
             if (item.name.includes("1")) {
                 langs[0] = "Juego 2D de Unity de la PEC 1 de la UOC";
                 langs[1] = "UOC PEC 1 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 1 de la UOC";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1237915?bg_color=1e1e1e&amp;fg_color=d4d4d4&amp;link_color=87cfd4&amp;border_color=5f5f5f" width="208" height="167"><a href="https://danagomez.itch.io/pec-1-monkey-island">PEC 1 Monkey Island by Dana Gomez</a></iframe>`;
+                link_img = "";
             }
             else if (item.name.includes("2")) {
                 langs[0] = "Juego 2D de Unity de la PEC 2 de la UOC";
@@ -83,7 +83,7 @@ $(document).ready(function () {
                 langs[0] = "Juego 2D de Unity de la PEC 4 de la UOC";
                 langs[1] = "UOC PEC 4 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 4 de la UOC";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1352334?bg_color=373737&amp;fg_color=e5e5e5&amp;link_color=fa5c5c&amp;border_color=545454" width="208" height="167"><a href="https://danagomez.itch.io/pec-4-projecte-final">PEC 4 - Projecte Final by Dana Gomez</a></iframe>`;
+                link_img = "https://gitlab.com/danagomez/pec4-practica-final/-/raw/master/Images/Level1.PNG";
             }
         }
         else if (item.name.includes("final_proj")){
@@ -91,19 +91,19 @@ $(document).ready(function () {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else if (item.name.includes("desktop")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
         }
         else if (item.name.includes("website")) {
@@ -111,13 +111,13 @@ $(document).ready(function () {
                 langs[0] = "Página web hecha utilizando PHP y base de datos MySQL";
                 langs[1] = "Website made with PHP and utilizing MySQL database";
                 langs[2] = "Pàgina web feta utilitzant PHP i base de dades MySQL";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else if (item.name.includes("css")){
                 langs[0] = "Página web hecha con HTML5 y CSS3";
                 langs[1] = "Website made with HTML5 and CSS3";
                 langs[2] = "Pàgina web feta amb HTML5 i CSS3";
-                link_img = `<img src="">`;
+                link_img = "";
             }
         }
         else {
@@ -125,31 +125,31 @@ $(document).ready(function () {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else if (item.name.includes("potatoapp")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else if (item.name.includes("ciberpunk")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else if (item.name.includes("chessgame")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = `<img src="">`;
+                link_img = "";
             }
             else {
                 langs[0] = "Repositorio en el qual se almacenan los ficheros de esta página web";
                 langs[1] = "Repository where this website's files are stored";
                 langs[2] = "Repositori on es guarden els fitxers d'aquesta pàgina web";
-                link_img = `<img src="images/screenshot.jpg">`;
+                link_img = "images/screenshot.jpg";
             }
         }
 
@@ -157,7 +157,7 @@ $(document).ready(function () {
         <span lang="en">${langs[1]}</span>
         <span lang="ca">${langs[2]}</span>`;
 
-        return [repo_description, link_img];
+        return [repo_description, `<img src="${link_img}">${demo_btn}`];
     }
     async function getGitLab() {
         const GITLAB_API = "https://gitlab.com/api/v4/";
