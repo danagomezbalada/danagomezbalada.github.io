@@ -732,7 +732,7 @@ footer {
 /* Print CSS */
 @page  { 
     size: auto;
-    margin: 15mm 10mm 25mm 10mm;  
+    margin: 15mm 10mm 15mm 10mm;  
 }
 
 @media print {
@@ -757,12 +757,13 @@ footer {
         margin-right: 0;
         width: 100%;
         position: relative;
-        color:black !important;
-        font-size:12pt;
         max-width: none;
     }
 
     #side-container {
+        color:black !important;
+        font-size:12pt;
+        
         margin: none;
         display: flex;
         flex-flow: row wrap;

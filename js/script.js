@@ -25,7 +25,7 @@ $(document).ready(function () {
         document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
 
-    // Variables and functions for integrations
+    // Functions for integrations with GitHub and GitLab projects
     function createDIV(article, url, tags, link_img, name, description, date, language, stars, forks, topics) {
         // Puts repo information into div
         $(".project." + article).append(`
@@ -56,11 +56,116 @@ $(document).ready(function () {
             </div>
         `);
     }
+    function setDescImg(item) {
+        // Function that sets a specific description and image depending on the project, works with language selector
+        let langs = [3], link_img;
+
+        if (item.name.includes("PEC")) {
+            if (item.name.includes("1")) {
+                langs[0] = "Juego 2D de Unity de la PEC 1 de la UOC";
+                langs[1] = "UOC PEC 1 Unity 2D Game";
+                langs[2] = "Joc 2D de Unity de la PEC 1 de la UOC";
+                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1237915?bg_color=1e1e1e&amp;fg_color=d4d4d4&amp;link_color=87cfd4&amp;border_color=5f5f5f" width="208" height="167"><a href="https://danagomez.itch.io/pec-1-monkey-island">PEC 1 Monkey Island by Dana Gomez</a></iframe>`;
+            }
+            else if (item.name.includes("2")) {
+                langs[0] = "Juego 2D de Unity de la PEC 2 de la UOC";
+                langs[1] = "UOC PEC 2 Unity 2D Game";
+                langs[2] = "Joc 2D de Unity de la PEC 2 de la UOC";
+                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1276637?bg_color=444444&amp;fg_color=ffffff&amp;link_color=2ce8f4&amp;border_color=585858" width="208" height="167"><a href="https://danagomez.itch.io/pec-2-super-mario-bros">PEC 2 Super Mario Bros by Dana Gomez</a></iframe>`;
+            }
+            else if (item.name.includes("3")) {
+                langs[0] = "Juego 2D de Unity de la PEC 3 de la UOC";
+                langs[1] = "UOC PEC 3 Unity 2D Game";
+                langs[2] = "Joc 2D de Unity de la PEC 3 de la UOC";
+                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1315332?bg_color=535353&amp;fg_color=ffffff&amp;link_color=fa5c5c&amp;border_color=575757" width="208" height="167"><a href="https://danagomez.itch.io/pec-3-scorched-earth-worms">PEC 3 Scorched Earth / Worms by Dana Gomez</a></iframe>`;
+            }
+            else if (item.name.includes("4")) {
+                langs[0] = "Juego 2D de Unity de la PEC 4 de la UOC";
+                langs[1] = "UOC PEC 4 Unity 2D Game";
+                langs[2] = "Joc 2D de Unity de la PEC 4 de la UOC";
+                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1352334?bg_color=373737&amp;fg_color=e5e5e5&amp;link_color=fa5c5c&amp;border_color=545454" width="208" height="167"><a href="https://danagomez.itch.io/pec-4-projecte-final">PEC 4 - Projecte Final by Dana Gomez</a></iframe>`;
+            }
+        }
+        else if (item.name.includes("final_proj")){
+            if (item.name.includes("java")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else if (item.name.includes("desktop")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else {
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+        }
+        else if (item.name.includes("website")) {
+            if (item.name.includes("php")){
+                langs[0] = "Página web hecha utilizando PHP y base de datos MySQL";
+                langs[1] = "Website made with PHP and utilizing MySQL database";
+                langs[2] = "Pàgina web feta utilitzant PHP i base de dades MySQL";
+                link_img = `<img src="">`;
+            }
+            else if (item.name.includes("css")){
+                langs[0] = "Página web hecha con HTML5 y CSS3";
+                langs[1] = "Website made with HTML5 and CSS3";
+                langs[2] = "Pàgina web feta amb HTML5 i CSS3";
+                link_img = `<img src="">`;
+            }
+        }
+        else {
+            if (item.name.includes("mobilegame")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else if (item.name.includes("potatoapp")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else if (item.name.includes("ciberpunk")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else if (item.name.includes("chessgame")){
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
+                link_img = `<img src="">`;
+            }
+            else {
+                langs[0] = "Repositorio en el qual se almacenan los ficheros de esta página web";
+                langs[1] = "Repository where this website's files are stored";
+                langs[2] = "Repositori on es guarden els fitxers d'aquesta pàgina web";
+                link_img = `<img src="images/screenshot.jpg">`;
+            }
+        }
+
+        let repo_description = `<span lang="es">${langs[0]}</span>
+        <span lang="en">${langs[1]}</span>
+        <span lang="ca">${langs[2]}</span>`;
+
+        return [repo_description, link_img];
+    }
     async function getGitLab() {
         const GITLAB_API = "https://gitlab.com/api/v4/";
         const GITLAB_USER = "danagomez";
         var resp = await fetch(GITLAB_API + "users/" + GITLAB_USER + "/projects");
         var respData = await resp.json();
+
+        respData.sort(function(a,b){return new Date(b.last_activity_at) - new Date(a.last_activity_at);});
         
         for (const item of respData){
             resp = await fetch(GITLAB_API + "projects/" + item.id + "/languages");
@@ -78,28 +183,9 @@ $(document).ready(function () {
                 tags+= element + " ";
             });
             
-            var repo_description = "";
-            var link_img = `<img>`;
-            if (item.name.includes("PEC1")) {
-                repo_description = `<span lang="es">Juego 2D de Unity de la PEC 1 de la UOC</span>
-                <span lang="en">UOC PEC 1 Unity 2D Game</span>
-                <span lang="ca">Joc 2D de Unity de la PEC 1 de la UOC</span>`;
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1237915?bg_color=1e1e1e&amp;fg_color=d4d4d4&amp;link_color=87cfd4&amp;border_color=5f5f5f" width="208" height="167"><a href="https://danagomez.itch.io/pec-1-monkey-island">PEC 1 Monkey Island by Dana Gomez</a></iframe>`;
-            }
-            else if (item.name.includes("PEC2")) {
-                repo_description = "UOC PEC 2 Unity 2D Game";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1276637?bg_color=444444&amp;fg_color=ffffff&amp;link_color=2ce8f4&amp;border_color=585858" width="208" height="167"><a href="https://danagomez.itch.io/pec-2-super-mario-bros">PEC 2 Super Mario Bros by Dana Gomez</a></iframe>`;
-            }
-            else if (item.name.includes("PEC3")) {
-                repo_description = "UOC PEC 3 Unity 2D Game";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1315332?bg_color=535353&amp;fg_color=ffffff&amp;link_color=fa5c5c&amp;border_color=575757" width="208" height="167"><a href="https://danagomez.itch.io/pec-3-scorched-earth-worms">PEC 3 Scorched Earth / Worms by Dana Gomez</a></iframe>`;
-            }
-            else if (item.name.includes("PEC4")) {
-                repo_description = "UOC PEC 4 Unity 2D Game";
-                link_img = `<iframe frameborder="0" src="https://itch.io/embed/1352334?bg_color=373737&amp;fg_color=e5e5e5&amp;link_color=fa5c5c&amp;border_color=545454" width="208" height="167"><a href="https://danagomez.itch.io/pec-4-projecte-final">PEC 4 - Projecte Final by Dana Gomez</a></iframe>`;
-            }
+            let desc_img = setDescImg(item);
             
-            createDIV("gitlab", item.web_url, tags, link_img, item.name, repo_description, date, repo_language, item.star_count, item.forks_count, item.topics);
+            createDIV("gitlab", item.web_url, tags, desc_img[1], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, item.topics);
         }
     }
     async function getGithub() {
@@ -108,22 +194,21 @@ $(document).ready(function () {
         resp = await fetch(GITHUB_API + GITHUB_USER + "/repos");
         respData = await resp.json();
         
+        respData.sort(function(a,b){return new Date(b.pushed_at) - new Date(a.pushed_at);});
+
         for (const item of respData) {
-            console.log(item);
 
             var tags = "";
             item.topics.forEach(element => {
                 tags+= element + " ";
             });
     
-            var link_img = "";
-            var repo_description = "";
+            let desc_img = setDescImg(item);
     
             var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
             
-    
-            createDIV("github", item.html_url, tags, link_img, item.name, repo_description, date, item.language, item.stargazers_count, item.forks, item.topics);
+            createDIV("github", item.html_url, tags, desc_img[1], item.name, desc_img[0], date, item.language, item.stargazers_count, item.forks, item.topics);
         }
     }
 
@@ -152,7 +237,7 @@ $(document).ready(function () {
         for (i = 0; i < customSelect.length; i++) {
             var selectElements = customSelect[i].getElementsByTagName("select")[0];
 
-            // CreateS a new DIV that will act as the selected item
+            // Creates a new DIV that will act as the selected item
             var DIVselected = document.createElement("DIV");
             DIVselected.setAttribute("class", "select-selected");
             DIVselected.id = "selected";
