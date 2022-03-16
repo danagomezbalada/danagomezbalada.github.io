@@ -33,23 +33,26 @@ $(document).ready(function () {
                 <a href='${url}' target='_blank'>
                     ${link_img}
                     ${demo_btn}
-                    <h1 class='title'>${name}</h1>
-                    <p class='description'>${date}<br>${description}</p>
+                    <h1>${name}</h1>
+                    <span class="date">${date}</span>
+                    <p>${description}</p>
                     <div class='bottom'>
-                        <div class='language'>
-                            <span class='img' uk-icon='code' class='uk-icon'></span>
-                            ${language}
+                        <div>
+                            <span>
+                                <i class="icon fa-solid fa-gears"></i>
+                                ${language}
+                            </span>
+                            <span>
+                                <i class="icon fa-solid fa-star"></i>
+                                ${stars}
+                            </span>
+                            <span>
+                                <i class="icon fa-solid fa-code-fork"></i>
+                                ${forks}
+                            </span>
                         </div>
-                        <div class='star'>
-                            <span class='img' uk-icon='star' class='uk-icon'></span>
-                            ${stars}
-                        </div>
-                        <div class='fork'>
-                            <span class='img' uk-icon='git-fork' class='uk-icon'></span>
-                            ${forks}
-                        </div>
-                        <div class='fork'>
-                            <span class='img' uk-icon='git-fork' class='uk-icon'></span>
+                        <div>
+                            <i class="fa-solid fa-tags"></i>
                             ${topics}
                         </div>
                     </div>
@@ -162,12 +165,20 @@ $(document).ready(function () {
         <span lang="en">${langs[1]}</span>
         <span lang="ca">${langs[2]}</span>`;
 
-        let demo_btn = "";
+        let demo_btn = "", demo_text = "";
         if (demo_link){
-            demo_btn = `<button class="demo-button" onclick=" window.open('${demo_link}', '_blank')">
-                <span lang="es">Juega en itch.io</span>
+            if (demo_link.includes("itch.io")){
+                demo_text = `<span lang="es">Juega en itch.io</span>
                 <span lang="en">Play on itch.io</span>
-                <span lang="ca">Juga a itch.io</span>
+                <span lang="ca">Juga a itch.io</span>`;
+            }
+            else {
+                demo_text = `<span lang="es">Demostración Online</span>
+                <span lang="en">Online Demonstration</span>
+                <span lang="ca">Demostració Online</span>`;
+            }
+            demo_btn = `<button class="demo-button" onclick=" window.open('${demo_link}', '_blank')">
+                ${demo_text}
             </button>`;
         }
 
