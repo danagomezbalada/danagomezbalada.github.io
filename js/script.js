@@ -26,14 +26,15 @@ $(document).ready(function () {
     }
 
     // Functions for integrations with GitHub and GitLab projects
-    function createDIV(article, url, tags, link_img, name, description, date, language, stars, forks, topics) {
+    function createDIV(article, url, tags, link_img, demo_btn, name, description, date, language, stars, forks, topics) {
         // Puts repo information into div
         $(".project." + article).append(`
             <div class='item ${tags}'>
                 <a href='${url}' target='_blank'>
                     ${link_img}
+                    ${demo_btn}
                     <h1 class='title'>${name}</h1>
-                    <p class='description'>${description}<br>${date}</p>
+                    <p class='description'>${date}<br>${description}</p>
                     <div class='bottom'>
                         <div class='language'>
                             <span class='img' uk-icon='code' class='uk-icon'></span>
@@ -52,7 +53,7 @@ $(document).ready(function () {
                             ${topics}
                         </div>
                     </div>
-                
+                </a>
             </div>
         `);
     }
@@ -72,21 +73,21 @@ $(document).ready(function () {
                 langs[0] = "Juego 2D de Unity de la PEC 2 de la UOC";
                 langs[1] = "UOC PEC 2 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 2 de la UOC";
-                link_img = "https://gitlab.com/danagomez/pec2-un-juego-de-plataformas/-/raw/master/Images/Game.png";
+                link_img = "images/projects/UOC-PEC2.png";
                 demo_link = "https://danagomez.itch.io/pec-2-super-mario-bros";
             }
             else if (item.name.includes("3")) {
                 langs[0] = "Juego 2D de Unity de la PEC 3 de la UOC";
                 langs[1] = "UOC PEC 3 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 3 de la UOC";
-                link_img = "https://gitlab.com/danagomez/pec3-un-juego-de-artilleria/-/raw/master/Images/Joc.png";
+                link_img = "images/projects/UOC-PEC3.png";
                 demo_link = "https://danagomez.itch.io/pec-3-scorched-earth-worms";
             }
             else if (item.name.includes("4")) {
                 langs[0] = "Juego 2D de Unity de la PEC 4 de la UOC";
                 langs[1] = "UOC PEC 4 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 4 de la UOC";
-                link_img = "https://gitlab.com/danagomez/pec4-practica-final/-/raw/master/Images/Level1.PNG";
+                link_img = "images/projects/UOC-PEC4.png";
                 demo_link = "https://danagomez.itch.io/pec-4-projecte-final";
             }
         }
@@ -163,12 +164,14 @@ $(document).ready(function () {
 
         let demo_btn = "";
         if (demo_link){
-            demo_btn = `<a class="demo-button" href="${demo_link}" target="_blank" rel="noopener noreferrer">
-            Play on itch.io
-            </a>`;
+            demo_btn = `<button class="demo-button" onclick=" window.open('${demo_link}', '_blank')">
+                <span lang="es">Juega en itch.io</span>
+                <span lang="en">Play on itch.io</span>
+                <span lang="ca">Juga a itch.io</span>
+            </button>`;
         }
 
-        return [repo_description, `<img src="${link_img}">${demo_btn}`];
+        return [repo_description, `<img src="${link_img}">`, demo_btn];
     }
     async function getGitLab() {
         const GITLAB_API = "https://gitlab.com/api/v4/";
@@ -176,7 +179,7 @@ $(document).ready(function () {
         var resp = await fetch(GITLAB_API + "users/" + GITLAB_USER + "/projects");
         var respData = await resp.json();
 
-        respData.sort(function(a,b){return new Date(b.last_activity_at) - new Date(a.last_activity_at);});
+        respData.sort(function(a,b){return new Date(b.created_at) - new Date(a.created_at);});
         
         for (const item of respData){
             resp = await fetch(GITLAB_API + "projects/" + item.id + "/languages");
@@ -196,18 +199,27 @@ $(document).ready(function () {
             
             let desc_img = setDescImg(item);
             
-            createDIV("gitlab", item.web_url, tags, desc_img[1], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, item.topics);
+            createDIV("gitlab", item.web_url, tags, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, item.topics);
         }
     }
     async function getGithub() {
-        const GITHUB_API = "https://api.github.com/users/";
+        const GITHUB_API = "https://api.github.com/";
         const GITHUB_USER = "danagomezbalada";
-        resp = await fetch(GITHUB_API + GITHUB_USER + "/repos");
+        resp = await fetch(GITHUB_API + "users/" + GITHUB_USER + "/repos");
         respData = await resp.json();
         
-        respData.sort(function(a,b){return new Date(b.pushed_at) - new Date(a.pushed_at);});
+        respData.sort(function(a,b){return new Date(b.created_at) - new Date(a.created_at);});
 
         for (const item of respData) {
+            resp = await fetch(GITHUB_API + "repos/" + GITHUB_USER + "/" + item.name + "/languages");
+            respData = await resp.json();
+            var repo_language = "";
+            for (let element of JSON.stringify(respData).slice(1, -1).split(",")) {
+                repo_language += element.split(":")[0].slice(1, -1) + " ";
+            }
+
+            var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
+            var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
 
             var tags = "";
             item.topics.forEach(element => {
@@ -215,11 +227,8 @@ $(document).ready(function () {
             });
     
             let desc_img = setDescImg(item);
-    
-            var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
-            var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
             
-            createDIV("github", item.html_url, tags, desc_img[1], item.name, desc_img[0], date, item.language, item.stargazers_count, item.forks, item.topics);
+            createDIV("github", item.html_url, tags, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.stargazers_count, item.forks, item.topics);
         }
     }
 
