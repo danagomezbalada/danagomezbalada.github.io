@@ -383,6 +383,9 @@ aside .title h2 {
     font-weight: 300;
     letter-spacing: 1.6px;
 }
+aside .title .print-website{
+    display: none;
+}
 
 aside .desc {
     width: 85%;
@@ -583,7 +586,7 @@ section .article .list .item {
 
 /* Portfolio section */
 section #portfolio {
-    padding: 15px 0 0 15px;
+    padding: 15px 0 0 20px;
 }
 section .filters .filtergroup{
     display: flex;
@@ -614,14 +617,15 @@ section .filters .filtergroup .filterbtn.active {
 
 section .project {
     margin-top: 20px;
+    margin-right: 10px;
     padding-bottom: 20px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: stretch;
-    row-gap: 10px;
-    column-gap: 10px;
+    row-gap: 15px;
+    column-gap: 15px;
 }
 
 section .project .title {
@@ -647,9 +651,8 @@ section .project .item {
     background-color: var(--bg-sidebar);
     flex: 1;
     flex-basis: 40%;
-    max-width: 450px;
+    max-width: 435px;
     padding: 10px;
-    margin-right: 10px;
     border-radius: 0.25em;
     word-break: break-word;
 }
@@ -679,6 +682,13 @@ section .project .item img {
 section .project .item img:hover {
     filter: opacity(75%);
     transition: all 0.2s ease-in;
+}
+
+section .project .item h1 {
+    color: var(--color-headings);
+}
+section .project .item .icon{
+    color: var(--color-text2);
 }
 
 section .project .item .demo-button {
@@ -828,6 +838,7 @@ footer {
     }
     section .project {
         flex-flow: column nowrap;
+        align-items: center;
     }
     section .project .item {
         flex-basis: 90%;
@@ -893,6 +904,10 @@ footer {
     aside .title {
         font-size: 16pt;
         text-align: justify;
+    }
+    aside .title .print-website{
+        display: block;
+        font-size: 14pt;
     }
 
     aside .desc {

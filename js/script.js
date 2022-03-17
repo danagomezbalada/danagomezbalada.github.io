@@ -38,10 +38,10 @@ $(document).ready(function () {
                     <p>${description}</p>
                     <div class='bottom'>
                         <div>
-                            <span>
+                            <span><strong>
                                 <i class="icon fa-solid fa-gears"></i>
                                 ${language}
-                            </span>
+                            </strong></span>
                             <span>
                                 <i class="icon fa-solid fa-star"></i>
                                 ${stars}
@@ -52,7 +52,7 @@ $(document).ready(function () {
                             </span>
                         </div>
                         <div>
-                            <i class="fa-solid fa-tags"></i>
+                            <i class="icon fa-solid fa-tags"></i>
                             ${topics}
                         </div>
                     </div>
@@ -174,9 +174,9 @@ $(document).ready(function () {
                 <span lang="ca">Juga a itch.io</span>`;
             }
             else {
-                demo_text = `<span lang="es">Demostración Online</span>
-                <span lang="en">Online Demonstration</span>
-                <span lang="ca">Demostració Online</span>`;
+                demo_text = `<span lang="es">Demo en vivo</span>
+                <span lang="en">Live demo</span>
+                <span lang="ca">Demo en viu</span>`;
             }
             demo_btn = `<form action="${demo_link}" target="_blank">
                 <button class="demo-button">
@@ -484,6 +484,7 @@ $(document).ready(function () {
                 }
         });
 
+        // Load repositories
         getGitLab();
         getGithub();
 
@@ -496,3 +497,5 @@ $(document).ready(function () {
 
 
 // TODO: Add accordions for extra text in experience and education
+// TODO: Add descriptions for each project
+// TODO: Change categories: instead of Gitlab / Github, do personal, school and professional (mix github and gitlab)
