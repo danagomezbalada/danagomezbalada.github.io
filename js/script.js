@@ -34,7 +34,7 @@ $(document).ready(function () {
                     ${link_img}
                     ${demo_btn}
                     <h1>${name}</h1>
-                    <span class="date">${date}</span>
+                    <span class="date"><i class="icon fa-solid fa-calendar-days"></i> ${date}</span>
                     <p>${description}</p>
                     <div class='bottom'>
                         <div>
@@ -158,6 +158,7 @@ $(document).ready(function () {
                 langs[1] = "Repository where this website's files are stored";
                 langs[2] = "Repositori on es guarden els fitxers d'aquesta pàgina web";
                 link_img = "images/screenshot.jpg";
+                demo_link = "https://danagomezbalada.github.io/";
             }
         }
 
@@ -177,9 +178,11 @@ $(document).ready(function () {
                 <span lang="en">Online Demonstration</span>
                 <span lang="ca">Demostració Online</span>`;
             }
-            demo_btn = `<button class="demo-button" onclick=" window.open('${demo_link}', '_blank')">
-                ${demo_text}
-            </button>`;
+            demo_btn = `<form action="${demo_link}" target="_blank">
+                <button class="demo-button">
+                    ${demo_text}
+                </button>
+            </form>`;
         }
 
         return [repo_description, `<img src="${link_img}">`, demo_btn];
@@ -203,14 +206,15 @@ $(document).ready(function () {
             var date_parts = item.last_activity_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
             
-            var tags = "";
+            var classes = "";
             item.topics.forEach(element => {
-                tags+= element + " ";
+                classes+= element + " ";
             });
+            var tags = classes.replace(/ /g, ", ").slice(0, -2);
             
             let desc_img = setDescImg(item);
             
-            createDIV("gitlab", item.web_url, tags, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, item.topics);
+            createDIV("gitlab", item.web_url, classes, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, tags);
         }
     }
     async function getGithub() {
@@ -232,14 +236,15 @@ $(document).ready(function () {
             var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
 
-            var tags = "";
+            var classes = "";
             item.topics.forEach(element => {
-                tags+= element + " ";
+                classes+= element + " ";
             });
+            var tags = classes.replace(/ /g, ", ").slice(0, -2);
     
             let desc_img = setDescImg(item);
             
-            createDIV("github", item.html_url, tags, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.stargazers_count, item.forks, item.topics);
+            createDIV("github", item.html_url, classes, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.stargazers_count, item.forks, tags);
         }
     }
 
@@ -403,10 +408,14 @@ $(document).ready(function () {
         var id = this.id;
 
         if (id == "all")
-            $('.project .item').show(700);
+            $('.project .item').css("transition", "none").show(700, function(){
+                $(this).css("transition", "all 0.2s ease-in");
+            });
         else {
             $('.project .item').hide();
-            $('.project .item.' + id).show(700);
+            $('.project .item.' + id).css("transition", "none").show(700, function(){
+                $(this).css("transition", "all 0.2s ease-in");
+            });
 
             $('.project').each(function () {
                 if($(this).find('.' + id).length == 0)

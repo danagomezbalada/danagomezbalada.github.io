@@ -11,11 +11,11 @@
     --color-text3: #444444;
     --color-black: black;
     --color-white: white;
-    --select: black;
     --select-bg: #9eb4ff;
     --social-icons: rgba(0,0,0,0.7);
     --content-subtitle: rgba(0,0,0,0.9);
-    --box-shadow: rgba(0,0,0,0.1);
+    --image-shadow: rgba(0,0,0,0.1);
+    --box-shadow: rgba(0,0,0,0.4);
 }
 
 .dark-theme {
@@ -29,11 +29,11 @@
     --color-text3: #ebebeb;
     --color-black: white;
     --color-white: black;
-    --select: black;
     --select-bg: white;
     --social-icons: rgba(255,255,255,0.7);
     --content-subtitle: rgba(255,255,255,0.9);
-    --box-shadow: rgba(255,255,255,0.1);
+    --image-shadow: rgba(255,255,255,0.1);
+    --box-shadow: rgba(0,0,0,0.9);
 }
 
 ::-webkit-scrollbar{
@@ -48,7 +48,7 @@
 ::-webkit-scrollbar-track {background: transparent;}
 
 ::selection {
-    color: var(--select);
+    color: black;
     background: var(--select-bg);
 }
 
@@ -361,8 +361,8 @@ aside article {
 aside .avatar img {
     width: 140px;
     border-radius: 50%;
-    -webkit-box-shadow: 0 0 20px var(--box-shadow);
-    box-shadow: 0 0 20px var(--box-shadow);
+    -webkit-box-shadow: 0 0 20px var(--image-shadow);
+    box-shadow: 0 0 20px var(--image-shadow);
     transition: all 0.35s ease;
     will-change: transform;
 }
@@ -619,7 +619,7 @@ section .project {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     row-gap: 10px;
     column-gap: 10px;
 }
@@ -643,20 +643,27 @@ section .project .title h2{
 }
 
 section .project .item {
-    will-change: transform;
+    transition: all 0.2s ease-in;
     background-color: var(--bg-sidebar);
     flex: 1;
     flex-basis: 40%;
-    max-width: 430px;
+    max-width: 450px;
     padding: 10px;
     margin-right: 10px;
     border-radius: 0.25em;
     word-break: break-word;
 }
+section .project .item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 6px var(--box-shadow);
+    -webkit-box-shadow: 0 5px 6px var(--box-shadow);
+    transition: all 0.2s ease-in;
+}
 section .project .item > * {
     text-decoration: none;
     color: var(--color-text);
 }
+
 section .project .item a {
     display: flex;
     flex-flow: column nowrap;
@@ -667,6 +674,11 @@ section .project .item img {
     height: 200px;
     border-radius: 0.25em;
     object-fit: cover;
+    transition: all 0.2s ease-in;
+}
+section .project .item img:hover {
+    filter: opacity(75%);
+    transition: all 0.2s ease-in;
 }
 
 section .project .item .demo-button {
@@ -703,9 +715,20 @@ section .project .item .date {
 }
 section .project .item .bottom {
     margin-top: 10px;
+    position: relative;
+    color: var(--color-text3);
+}
+section .project .item .bottom::before {
+    content:'';
+    position: absolute;
+    background-color: var(--color-text3);
+    width: 75%;
+    height: 1px;
+    left: 15%;
 }
 section .project .item .bottom div {
     margin-top: 5px;
+    padding-top: 5px;
 }
 
 /* Other */
@@ -723,7 +746,7 @@ section .project .item .bottom div {
     z-index: 99;
 
     color: var(--color-text);
-    background-color: var(--bg-sidebar);
+    background-color: var(--color-white);
     will-change: transform; 
 }
 #scroll-button:hover {
