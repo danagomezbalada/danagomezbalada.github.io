@@ -1,3 +1,5 @@
+const REPOS = [];
+
 $(document).ready(function () {
     // Functions for cookies
     function setCookie(name, value, days) {
@@ -26,34 +28,34 @@ $(document).ready(function () {
     }
 
     // Functions for integrations with GitHub and GitLab projects
-    function createDIV(article, url, tags, link_img, demo_btn, name, description, date, language, stars, forks, topics) {
+    function createDIV(item) {
         // Puts repo information into div
-        $(".project." + article).append(`
-            <div class='item ${tags}'>
-                <a href='${url}' target='_blank'>
-                    ${link_img}
-                    ${demo_btn}
-                    <h1>${name}</h1>
-                    <span class="date"><i class="icon fa-solid fa-calendar-days"></i> ${date}</span>
-                    <p>${description}</p>
+        $(".project." + item.article).append(`
+            <div class='item ${item.classes}'>
+                <a href='${item.web_url}' target='_blank'>
+                    ${item.link_img}
+                    ${item.demo_btn}
+                    <h1>${item.name}</h1>
+                    <span class="date"><i class="icon fa-solid fa-calendar-days"></i> ${item.date}</span>
+                    <p>${item.description}</p>
                     <div class='bottom'>
                         <div>
                             <span><strong>
                                 <i class="icon fa-solid fa-gears"></i>
-                                ${language}
+                                ${item.language}
                             </strong></span>
                             <span>
                                 <i class="icon fa-solid fa-star"></i>
-                                ${stars}
+                                ${item.stars}
                             </span>
                             <span>
                                 <i class="icon fa-solid fa-code-fork"></i>
-                                ${forks}
+                                ${item.forks}
                             </span>
                         </div>
                         <div>
                             <i class="icon fa-solid fa-tags"></i>
-                            ${topics}
+                            ${item.tags}
                         </div>
                     </div>
                 </a>
@@ -187,14 +189,27 @@ $(document).ready(function () {
 
         return [repo_description, `<img src="${link_img}">`, demo_btn];
     }
-    async function getGitLab() {
+    async function getRepos(repos) {
+        await getGitLab(repos);
+        await getGithub(repos);
+        
+        repos.sort(function (a,b){return new Date(b.created_at) - new Date(a.created_at);});
+        repos.forEach(function (item, index) {
+            createDIV(item);
+        });
+
+        $('#portfolio .project').sort(function (a, b) {
+            return $(b).find(".date:first").text().localeCompare($(a).find(".date:first").text());
+        }).appendTo('#portfolio');
+
+        $('#lang-switch').val($('#lang-switch').val()).change();
+    }
+    async function getGitLab(repos) {
         const GITLAB_API = "https://gitlab.com/api/v4/";
         const GITLAB_USER = "danagomez";
         var resp = await fetch(GITLAB_API + "users/" + GITLAB_USER + "/projects");
         var respData = await resp.json();
 
-        respData.sort(function(a,b){return new Date(b.created_at) - new Date(a.created_at);});
-        
         for (const item of respData){
             resp = await fetch(GITLAB_API + "projects/" + item.id + "/languages");
             respData = await resp.json();
@@ -206,24 +221,39 @@ $(document).ready(function () {
             var date_parts = item.last_activity_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
             
-            var classes = "";
+            var classes = "", article = "";
             item.topics.forEach(element => {
-                classes+= element + " ";
+                if (element == "school" || element == "personal" || element == "professional")
+                    article = element;
+                else
+                    classes+= element + " ";
             });
             var tags = classes.replace(/ /g, ", ").slice(0, -2);
             
             let desc_img = setDescImg(item);
             
-            createDIV("gitlab", item.web_url, classes, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.star_count, item.forks_count, tags);
+            repos.push({
+                article: article,
+                web_url: item.web_url,
+                classes: classes,
+                link_img: desc_img[1],
+                demo_btn: desc_img[2],
+                name: item.name,
+                description: desc_img[0],
+                date: date,
+                language: repo_language,
+                stars: item.star_count,
+                forks: item.forks_count,
+                tags : tags,
+                created_at: item.created_at
+            });
         }
     }
-    async function getGithub() {
+    async function getGithub(repos) {
         const GITHUB_API = "https://api.github.com/";
         const GITHUB_USER = "danagomezbalada";
         resp = await fetch(GITHUB_API + "users/" + GITHUB_USER + "/repos");
         respData = await resp.json();
-        
-        respData.sort(function(a,b){return new Date(b.created_at) - new Date(a.created_at);});
 
         for (const item of respData) {
             resp = await fetch(GITHUB_API + "repos/" + GITHUB_USER + "/" + item.name + "/languages");
@@ -236,15 +266,32 @@ $(document).ready(function () {
             var date_parts = item.pushed_at.split("T")[0].split("-").reverse();
             var date = date_parts[0] + "/" + date_parts[1] + "/" + date_parts[2];
 
-            var classes = "";
+            var classes = "", article = "";
             item.topics.forEach(element => {
-                classes+= element + " ";
+                if (element == "school" || element == "personal" || element == "professional")
+                    article = element;
+                else
+                    classes+= element + " ";
             });
             var tags = classes.replace(/ /g, ", ").slice(0, -2);
     
             let desc_img = setDescImg(item);
             
-            createDIV("github", item.html_url, classes, desc_img[1], desc_img[2], item.name, desc_img[0], date, repo_language, item.stargazers_count, item.forks, tags);
+            repos.push({
+                article: article,
+                web_url: item.html_url,
+                classes: classes,
+                link_img: desc_img[1],
+                demo_btn: desc_img[2],
+                name: item.name,
+                description: desc_img[0],
+                date: date,
+                language: repo_language,
+                stars: item.stargazers_count,
+                forks: item.forks,
+                tags : tags,
+                created_at: item.created_at
+            });
         }
     }
 
@@ -397,8 +444,6 @@ $(document).ready(function () {
         document.getElementById(pageName).style.display = "block";
         this.style.backgroundColor = "inherit";
         this.disabled = true;
-
-        $('#lang-switch').val($('#lang-switch').val()).change();
     });
 
     // Filter buttons onClick
@@ -485,8 +530,7 @@ $(document).ready(function () {
         });
 
         // Load repositories
-        getGitLab();
-        getGithub();
+        getRepos(REPOS);
 
         // When click anywhere, close the select dropdown
         document.addEventListener("click", closeAllSelect);
@@ -498,4 +542,3 @@ $(document).ready(function () {
 
 // TODO: Add accordions for extra text in experience and education
 // TODO: Add descriptions for each project
-// TODO: Change categories: instead of Gitlab / Github, do personal, school and professional (mix github and gitlab)
