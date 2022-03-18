@@ -71,7 +71,7 @@ $(document).ready(function () {
                 langs[0] = "Juego 2D de Unity de la PEC 1 de la UOC";
                 langs[1] = "UOC PEC 1 Unity 2D Game";
                 langs[2] = "Joc 2D de Unity de la PEC 1 de la UOC";
-                link_img = "";
+                link_img = "images/projects/UOC-PEC1.png";
                 demo_link = "https://danagomez.itch.io/pec-1-monkey-island";
             }
             else if (item.name.includes("2")) {
@@ -101,33 +101,34 @@ $(document).ready(function () {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/ProjFInalJava.png";
             }
             else if (item.name.includes("desktop")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/ProjFinalDesktop.png";
             }
             else {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/ProjFinalAndroid.PNG";
             }
+            demo_link = "files/Projecte_DAM_JDS.pdf#toolbar=0";
         }
         else if (item.name.includes("website")) {
             if (item.name.includes("php")){
                 langs[0] = "Página web hecha utilizando PHP y base de datos MySQL";
                 langs[1] = "Website made with PHP and utilizing MySQL database";
                 langs[2] = "Pàgina web feta utilitzant PHP i base de dades MySQL";
-                link_img = "";
+                link_img = "images/projects/PhpWebsite.PNG";
             }
             else if (item.name.includes("css")){
                 langs[0] = "Página web hecha con HTML5 y CSS3";
                 langs[1] = "Website made with HTML5 and CSS3";
                 langs[2] = "Pàgina web feta amb HTML5 i CSS3";
-                link_img = "";
+                link_img = "images/projects/CssWebsite.png";
             }
         }
         else {
@@ -135,25 +136,29 @@ $(document).ready(function () {
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/MobileGame.png";
+                demo_link = "https://natius-dev.gitlab.io/colonitzacio-i-els-venuts/inicio/";
             }
             else if (item.name.includes("potatoapp")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/PotatoApp.png";
+                demo_link = "files/ProjectePatata_Dana.pdf#toolbar=0";
             }
             else if (item.name.includes("ciberpunk")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/Ciberpunk.png";
+                demo_link = "files/Projecte-Ciberpunk_DanaGomez.pdf#toolbar=0";
             }
             else if (item.name.includes("chessgame")){
                 langs[0] = "";
                 langs[1] = "";
                 langs[2] = "";
-                link_img = "";
+                link_img = "images/projects/ChessGame.png";
+                demo_link = "files/Projecte-Escacs_DanaGomez.pdf#toolbar=0";
             }
             else {
                 langs[0] = "Repositorio en el qual se almacenan los ficheros de esta página web";
@@ -175,9 +180,9 @@ $(document).ready(function () {
                 <span lang="ca">Juga a itch.io</span>`;
             }
             else {
-                demo_text = `<span lang="es">Ver proyecto</span>
-                <span lang="en">View project</span>
-                <span lang="ca">Veure projecte</span>`;
+                demo_text = `<span lang="es">Leer documentación (Catalán)</span>
+                <span lang="en">Read the docs (Catalan)</span>
+                <span lang="ca">Llegir documentaciò</span>`;
             }
             demo_btn = `<form action="${demo_link}" target="_blank">
                 <button class="demo-button">
