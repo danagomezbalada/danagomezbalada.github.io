@@ -306,10 +306,10 @@ $(document).ready(function () {
         
         $('#portfolio .project').each(function (){
             var current = $(this);
+            current.find(".showmore").remove();
 
             if (current.children('.item' + id).length > 6) {
-                current.find(".showmore").remove();
-                current.children(".item:nth-of-type(n+8)").addClass("hide").hide();
+                current.children(".item" + id + ":nth-of-type(n+8)").addClass("hide").hide();
                 current.append(`
                     <button class="showmore more">
                         + Show More
