@@ -160,7 +160,6 @@ $(document).ready(function () {
                 langs[1] = "Repository where this website's files are stored";
                 langs[2] = "Repositori on es guarden els fitxers d'aquesta pàgina web";
                 link_img = "images/screenshot.jpg";
-                demo_link = "https://danagomezbalada.github.io/";
             }
         }
 
@@ -176,9 +175,9 @@ $(document).ready(function () {
                 <span lang="ca">Juga a itch.io</span>`;
             }
             else {
-                demo_text = `<span lang="es">Demo en vivo</span>
-                <span lang="en">Live demo</span>
-                <span lang="ca">Demo en viu</span>`;
+                demo_text = `<span lang="es">Ver proyecto</span>
+                <span lang="en">View project</span>
+                <span lang="ca">Veure projecte</span>`;
             }
             demo_btn = `<form action="${demo_link}" target="_blank">
                 <button class="demo-button">
@@ -199,10 +198,13 @@ $(document).ready(function () {
         });
 
         $('#portfolio .project').sort(function (a, b) {
-            return $(b).find(".date:first").text().localeCompare($(a).find(".date:first").text());
+            return new Date($(b).find(".date:first").text()) - new Date($(a).find(".date:first").text());
         }).appendTo('#portfolio');
 
+        hideItems();
+
         $('#lang-switch').val($('#lang-switch').val()).change();
+        $('#curriculum .item.hide').hide();
     }
     async function getGitLab(repos) {
         const GITLAB_API = "https://gitlab.com/api/v4/";
@@ -293,6 +295,51 @@ $(document).ready(function () {
                 created_at: item.created_at
             });
         }
+    }
+
+    // If there are more than 6 projects in one article, hide the rest and show a button
+    function hideItems(id = "") {
+        if (id == "all")
+            id = "";
+        else if (id != "")
+            id = "." + id;
+        
+        $('#portfolio .project').each(function (){
+            var current = $(this);
+
+            if (current.children('.item' + id).length > 6) {
+                current.find(".showmore").remove();
+                current.children(".item:nth-of-type(n+8)").addClass("hide").hide();
+                current.append(`
+                    <button class="showmore more">
+                        + Show More
+                    </button>
+                `);
+            }
+        });
+
+        setShowmore();
+    }
+    // Set the "Show More" button onClick
+    function setShowmore() {
+        $(".showmore").unbind('click');
+        $(".showmore").on("click", function () {
+            var current = $(this);
+            var thisParent = current.closest('article');
+
+            if (current.hasClass('more')) {
+                thisParent.find('.hide').css("transition", "none").show(700, function(){
+                    $(this).css("transition", "all 0.2s ease-in");
+                });
+                current.toggleClass('more', 'less').html('- Show less');
+            }
+            else {
+                thisParent.find('.hide').css("transition", "none").hide(700, function(){
+                    $(this).css("transition", "all 0.2s ease-in");
+                });
+                current.toggleClass('more', 'less').html('+ Show more');
+            }
+        });
     }
 
     // When user changes light/dark mode
@@ -467,6 +514,8 @@ $(document).ready(function () {
                     $(this).hide();
             });
         }
+        
+        hideItems(id);
     });
 
     // Function to run on page load
@@ -528,9 +577,12 @@ $(document).ready(function () {
                     selected.click();
                 }
         });
+        $('#curriculum .item.hide').hide();
 
         // Load repositories
         getRepos(REPOS);
+
+        setShowmore();
 
         // When click anywhere, close the select dropdown
         document.addEventListener("click", closeAllSelect);
@@ -542,3 +594,4 @@ $(document).ready(function () {
 
 // TODO: Add accordions for extra text in experience and education
 // TODO: Add descriptions for each project
+// TODO: Add projects that are not in GitHub / GitLab (sewermapper, inforcerdanya website, etc...)

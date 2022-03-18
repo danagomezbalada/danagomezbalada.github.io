@@ -518,6 +518,11 @@ section .print-links {
     display: none;
 }
 
+section .showmore {
+    display: inline-block;
+    width: 100%;
+}
+
 /* Curriculum section */
 section #curriculum {
     padding: 15px 0 0 45px;
