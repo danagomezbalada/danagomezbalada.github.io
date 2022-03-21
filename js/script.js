@@ -88,9 +88,9 @@ $(document).ready(function () {
                 demo_link = "https://danagomez.itch.io/pec-3-scorched-earth-worms";
             }
             else if (item.name.includes("4")) {
-                langs[0] = "Este juego es un juego de tipo RPG con una historia, basado en los clásicos de \"RPG Maker\". Ha sido el último proyecto del curso de Programación de Videojuegos 2D de la UOC.";
-                langs[1] = "This game is an RPG-style game with a story, based on the \"RPG Maker\" classics. It was the last project of the 2D Videogame Programming course from the UOC.";
-                langs[2] = "Aquest joc es un joc tipus RPG amb una història, basat ens els clàssics de \"RPG Maker\". Ha sigut l'últim projecte del curs de Programació de Videojocs 2D de la UOC.";
+                langs[0] = "Un juego 2D de Unity inspirado por los classicos juegos JRPG de RPG Maker. Controlas a una universitaria que es transportada a un misterioso mundo de sueños tras mirar un video maldito. Puedes explorar, interactuar y charlar para descubrir más sobre el mundo y la historia. Eso sí, ten cuidado cuando llegues al mundo de los sueños... (El juego está en catalán!)";
+                langs[1] = "A Unity 2D game inspired by the classic JRPG games from RPG Maker. You play as a college student who is transported into a mysterious dream world after watching a cursed video. You can explore, interact and chat to find out more about the world and the story. Just be careful when you reach the dream world... (The game is in Catalan!)";
+                langs[2] = "Un joc 2D de Unity inspirat per els clàssics jocs JRPG de RPG Maker. Control·les a una universitària que és transportada a un misteriòs món de somnis després de veure un video maleït. Pots explorar, interactuar i parlar per descobrir més sobre el món i la història. Això sí, ves amb compte quan arribis al món dels somnis...";
                 link_img = "images/projects/UOC-PEC4.png";
                 demo_link = "https://danagomez.itch.io/pec-4-projecte-final";
             }
@@ -160,9 +160,9 @@ $(document).ready(function () {
                 demo_link = "files/Projecte-Escacs_DanaGomez.pdf#toolbar=0";
             }
             else {
-                langs[0] = "Repositorio en el qual se almacenan los ficheros de esta página web";
-                langs[1] = "Repository where this website's files are stored";
-                langs[2] = "Repositori on es guarden els fitxers d'aquesta pàgina web";
+                langs[0] = "Una página web creada con HTML5, CSS3, JavaScript y jQuery. Está completamente desarrollada y mantenida por mí. Algunos aspectos clave: varios idiomas, botón de imprimir/descargar, modo oscuro, pestaña de proyectos (donde los proyectos están categorizados y ordenados por fecha), filtros de proyecto, animaciones, cookies temporales, etc...";
+                langs[1] = "A website created with HTML5, CSS3, JavaScript and jQuery. It is fully developed and mainteined by me. Some key features include: various languages, print/download button, dark mode, projects tab (where projects are categorized and ordered by date), project filters, animations, temporary cookies, etc...";
+                langs[2] = "Una pàgina web creada amb HTML5, CSS3, JavaScript i jQuery. Està totalment desenvolupada i mantinguda per mi. Alguns aspectes claus: varis llanguatges, botó de imprimir/descarregar, mode oscur, pestanya de projectes (on els projectes estan categoritzats i ordenats per data), filtres de projecte, animacions, cookies temporals, etc...";
                 link_img = "images/screenshot.jpg";
             }
         }
