@@ -30,7 +30,7 @@
     </head>
     <body>
         <div id="container">
-            <header>
+            <header class="print-hide">
                 <button id="print-button">
                     <span lang="es">Descargar / Imprimir</span>
                     <span lang="en">Download / Print</span>
@@ -84,7 +84,7 @@
                             <p lang="ca">He estudiat informàtica i programació en <strong><em>dos graus superiors</em></strong>, i he treballat com a desenvolupadora de software en pràctiques a <strong>SpacePal EU</strong>.<br>També he fet un curs de <strong><em>disseny de videojocs 2D</em></strong>.<br><br>❤ El meu somni es treballar com a desenvolupadora de software o de videojocs.</p>
                         </article>
     
-                        <article class="contact">
+                        <article class="contact print-hide">
                             <img src="images/dark.png" alt="" lang="es">
                             <img src="images/dark-eng.png" alt="" lang="en">
                             <img src="images/dark-cat.png" alt="" lang="ca">
@@ -95,7 +95,7 @@
                             <img src="images/light-cat.png" alt="" lang="ca">
                         </article>
     
-                        <article class="social">
+                        <article class="social print-hide">
                             <ul>
                                 <li><a href="https://www.linkedin.com/in/danagomezbalada/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
                                 <li><a href="https://github.com/danagomezbalada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-square"></i></a></li>
@@ -117,7 +117,7 @@
                     </div>
                 </aside>
                 <section>
-                    <div id="main-nav">
+                    <div id="main-nav" class="print-hide">
                         <button class="tablink" id="btn-curriculum">
                             <span lang="es">Currículum</span>
                             <span lang="en">Resume</span>
@@ -137,30 +137,26 @@
                                 <h2 lang="en">EXPERIENCE</h2>
                                 <h2 lang="ca">EXPERIÈNCIA</h2>
                             </div>
-                            <div class="item" lang="es">
-                              <h3>Comunicación y Administración de redes sociales</h3>
-                              <span><strong>Consejo Comarcal de la Cerdaña</strong> | Septiembre 2021 - Presente</span>
-                              <ul>
+                            <div class="item">
+                              <h3 lang="es">Comunicación y Administración de redes sociales</h3>
+                              <h3 lang="en">Communications & Social Media Management</h3>
+                              <h3 lang="ca">Comunicació i Administració de xarxes socials</h3>
+                              <span lang="es"><strong>Consejo Comarcal de la Cerdaña</strong> | Septiembre 2021 - Presente</span>
+                              <span lang="en"><strong>Regional Council of Cerdanya</strong> | September 2021 - Present</span>
+                              <span lang="ca"><strong>Consell Comarcal de la Cerdanya</strong> | Setembre 2021 - Present</span>
+                              <ul lang="es">
                                   <li>Gestión de los perfiles de redes sociales del Consejo Comarcal de la Cerdaña</li>
                                   <li>Redacción de notas de prensa y contacto con los medios de comunicación</li>
                                   <li>Apoyo al Consejo con la elaboración de materiales de comunicación</li>
                                   <li>Elaboración de contenido de la página web del Consejo Comarcal</li>
                               </ul>
-                            </div>
-                            <div class="item" lang="en">
-                              <h3>Communications & Social Media Management</h3>
-                              <span><strong>Regional Council of Cerdanya</strong> | September 2021 - Present</span>
-                              <ul>
+                              <ul lang="en">
                                   <li>Management of the social network profiles of the Regional Council of Cerdanya</li>
                                   <li>Writing press releases and contacting the media</li>
                                   <li>Support to the Council with the development of communication materials</li>
                                   <li>Elaboration of content for the Regional Council's web page</li>
                               </ul>
-                            </div>
-                            <div class="item" lang="ca">
-                              <h3>Comunicació i Administració de xarxes socials</h3>
-                              <span><strong>Consell Comarcal de la Cerdanya</strong> | Setembre 2021 - Present</span>
-                              <ul>
+                              <ul lang="ca">
                                   <li>Gestió dels perfils de xarxes socials del Consell Comarcal de la Cerdanya</li>
                                   <li>Redacció de notes de premsa i contacte amb els mitjans de comunicació</li>
                                   <li>Suport al Consell amb l’elaboració de materials de comunicació</li>
@@ -169,67 +165,59 @@
                             </div>
                             
                             
-                            <div class="item" lang="es">
-                              <h3>Desarrolladora de Software en prácticas</h3>
-                              <span><strong>SpacePal EU</strong> | Mayo 2021 - Julio 2021</span>
-                              <ul>
+                            <div class="item">
+                              <h3 lang="es">Desarrolladora de Software en prácticas</h3>
+                              <h3 lang="en">Software Developer Intern</h3>
+                              <h3 lang="ca">Desenvolupadora de Software en pràctiques</h3>
+                              <span lang="es"><strong>SpacePal EU</strong> | Mayo 2021 - Julio 2021</span>
+                              <span lang="en"><strong>SpacePal EU</strong> | May 2021 - July 2021</span>
+                              <span lang="ca"><strong>SpacePal EU</strong> | Maig 2021 - Juliol 2021</span>
+                              <ul lang="es">
                                   <li>Programación Python (utilizando: pandas, open3d, numpy, matplotlib, etc...)</li>
                                   <li>Análisis de datos de pointclouds (imágenes 3D con puntos)</li>
                                   <li>Mejorado el código original (Orientación a Objetos, UML).</li>
                                   <li>Arreglados errores y bugs, añadidas mejoras en el código para mejorar la velocidad / integridad de los datos.</li>
                                   <li>Git y GitLab, control de versión, trabajo en equipo.</li>
                               </ul>
-                              <p>Trabajé en un proyecto que analiza los datos obtenidos de una alcantarilla en forma de pointcloud, georeferenciándolo, detectando la obertura del agujero, detectando el nivel del suelo, y dividiendo la alcantarilla en varios segmentos útiles para determinar la altura y el diámetro de cada segmento.</p>
-                            </div>
-                            <div class="item" lang="en">
-                              <h3>Software Developer Intern</h3>
-                              <span><strong>SpacePal EU</strong> | May 2021 - July 2021</span>
-                              <ul>
+                              <ul lang="en">
                                   <li>Python programming (worked with: pandas, open3d, numpy, matplotlib, etc..)</li>
                                   <li>Data analysis of pointclouds (3D images with points)</li>
                                   <li>Improved original code by using OOP and UML.</li>
                                   <li>Fixed bugs and issues, added minor improvements for speed / data integrity.</li>
                                   <li>Worked with Git and GitLab, version control, teamwork.</li>
                               </ul>
-                              <p>Worked on a project that analyses the data obtained from a sewer in pointcloud form, by georeferencing it, detecting the manhole opening, detecting the groundlevel, and segmenting the sewer into various segments useful to determine the height and diameter of each segment.</p>
-                            </div>
-                            <div class="item" lang="ca">
-                              <h3>Desenvolupadora de Software en pràctiques</h3>
-                              <span><strong>SpacePal EU</strong> | Maig 2021 - Juliol 2021</span>
-                              <ul>
+                              <ul lang="ca">
                                   <li>Programació Python (utilizant: pandas, open3d, numpy, matplotlib, etc...)</li>
                                   <li>Anàlisi de dades de pointclouds (imatges 3D amb punts)
                                   <li>Millorat el codi original (Orientació a Objectes, UML).</li>
                                   <li>Arreglats errors i bugs, afegides millores en el codi per millorar la velocitat / integritat de les dades.</li>
                                   <li>Git i GitLab, control de versió, treball en equip.</li>
                               </ul>
-                              <p>Vaig treballar en un projecte que analitza les dades obtingudes d'una claveguera en forma de pointcloud, georeferenciant-lo, detectant l'obertura del forat, detectant el nivell del terra, i dividint la claveguera en varis segments útils per a determinar l'altura i el diàmetre de cada segment.</p>
+                              <p lang="es">Trabajé en un proyecto que analiza los datos obtenidos de una alcantarilla en forma de pointcloud, georeferenciándolo, detectando la obertura del agujero, detectando el nivel del suelo, y dividiendo la alcantarilla en varios segmentos útiles para determinar la altura y el diámetro de cada segmento.</p>
+                              <p lang="en">Worked on a project that analyses the data obtained from a sewer in pointcloud form, by georeferencing it, detecting the manhole opening, detecting the groundlevel, and segmenting the sewer into various segments useful to determine the height and diameter of each segment.</p>
+                              <p lang="ca">Vaig treballar en un projecte que analitza les dades obtingudes d'una claveguera en forma de pointcloud, georeferenciant-lo, detectant l'obertura del forat, detectant el nivell del terra, i dividint la claveguera en varis segments útils per a determinar l'altura i el diàmetre de cada segment.</p>
                             </div>
                             
-                            <div class="item" lang="es">
-                              <h3>Técnica Informática en prácticas</h3>
-                              <span><strong>Inforcerdanya</strong> | Mayo 2019 - Mayo 2020</span>
-                              <ul>
+                            <div class="item">
+                              <h3 lang="es">Técnica Informática en prácticas</h3>
+                              <h3 lang="en">I.T. Technician Intern</h3>
+                              <h3 lang="ca">Tècnica Informàtica en pràctiques</h3>
+                              <span lang="es"><strong>Inforcerdanya</strong> | Mayo 2019 - Mayo 2020</span>
+                              <span lang="en"><strong>Inforcerdanya</strong> | May 2019 - May 2020</span>
+                              <span lang="ca"><strong>Inforcerdanya</strong> | Maig 2019 - Maig 2020</span>
+                              <ul lang="es">
                                   <li>Administración e instalación de sistemas operativos.</li>
                                   <li>Detectar y resolver los problemas técnicos de clientes.</li>
                                   <li>Mantenimiento de hardware, software y redes.</li>
                                   <li><a href="https://inforcerdanya.com/" target="_blank" rel="noopener noreferrer">Creación de una página web</a><span class="print-links"> (inforcerdanya.com)</span></li>
                               </ul>
-                            </div>
-                            <div class="item" lang="en">
-                              <h3>I.T. Technician Intern</h3>
-                              <span><strong>Inforcerdanya</strong> | May 2019 - May 2020</span>
-                              <ul>
+                              <ul lang="en">
                                   <li>Administration and installation of operating systems.</li>
                                   <li>Detect and solve client's technical problems.</li>
                                   <li>Maintenance of hardware, software and networks.</li>
                                   <li><a href="https://inforcerdanya.com/" target="_blank" rel="noopener noreferrer">Design of a website</a><span class="print-links"> (inforcerdanya.com)</span></li>
                               </ul>
-                            </div>
-                            <div class="item" lang="ca">
-                              <h3>Tècnica Informàtica en pràctiques</h3>
-                              <span><strong>Inforcerdanya</strong> | Maig 2019 - Maig 2020</span>
-                              <ul>
+                              <ul lang="ca">
                                   <li>Administració i instal·lació de sistemes operatius.</li>
                                   <li>Detectar i resoldre els problemes técnics de clients.</li>
                                   <li>Manteniment de hardware, software i xarxes.</li>
@@ -237,33 +225,29 @@
                               </ul>
                             </div>
                             
-                            <div class="item hide" lang="es">
-                              <h3>Agente del Círculo de Lectores</h3>
-                              <span><strong>Grupo Planeta</strong> | Septiembre 2017 - Marzo 2018</span>
-                              <ul>
+                            <div class="item hide">
+                              <h3 lang="es">Agente del Círculo de Lectores</h3>
+                              <h3 lang="en">Círculo de Lectores Agent</h3>
+                              <h3 lang="ca">Agent del Círculo de Lectores</h3>
+                              <span lang="es"><strong>Grupo Planeta</strong> | Septiembre 2017 - Marzo 2018</span>
+                              <span lang="en"><strong>Grupo Planeta</strong> | September 2017 - March 2018</span>
+                              <span lang="ca"><strong>Grupo Planeta</strong> | Setembre 2017 - Març 2018</span>
+                              <ul lang="es">
                                   <li>Distribuir catálogos y tomar pedidos mensualmente.</li>
                                   <li>Entregar pedidos y productos de belleza al hogar del cliente.</li>
                               </ul>
-                            </div>
-                            <div class="item hide" lang="en">
-                              <h3>Círculo de Lectores Agent</h3>
-                              <span><strong>Grupo Planeta</strong> | September 2017 - March 2018</span>
-                              <ul>
+                              <ul lang="en">
                                   <li>Distribute catalogs and take orders monthly.</li>
                                   <li>Deliver orders and beauty products to client's homes.</li>
                               </ul>
-                            </div>
-                            <div class="item hide" lang="ca">
-                              <h3>Agent del Círculo de Lectores</h3>
-                              <span><strong>Grupo Planeta</strong> | Setembre 2017 - Març 2018</span>
-                              <ul>
+                              <ul lang="ca">
                                   <li>Distribuir catàlegs i prendre ordres mensualment.</li>
                                   <li>Entregar ordres i productes de bellesa a casa del client.</li>
                               </ul>
                             </div>
 
-                            <button class="showmore more">
-                                + Show More
+                            <button class="showmore more print-hide">
+                                <i class="icon fa-solid fa-plus"></i>
                             </button>
                         </article>
                         <hr>
@@ -281,6 +265,7 @@
                               <p lang="es"><span>Septiembre 2021</span> - <a href="files\20210901_Recommendation-letter.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">Documento Original</a><span class="print-links"> (Adjunto)</span></p>
                               <p lang="en"><span>September 2021</span> - <a href="files\20210901_Recommendation-letter.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">Original Document</a><span class="print-links"> (Attached)</span></p>
                               <p lang="ca"><span>Setembre 2021</span> - <a href="files\20210901_Recommendation-letter.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">Document Original</a><span class="print-links"> (Adjunt)</span></p>
+                            </div>
                         </article>
                         <hr>
                         <article class="article">
@@ -290,65 +275,47 @@
                                 <h2 lang="en">EDUCATION</h2>
                                 <h2 lang="ca">EDUCACIÓ</h2>
                             </div>
-                            <div class="item" lang="es">
-                                <h3>UOC (Universidad Abierta de Cataluña)</h3>
-                                <span><strong>Programación de Videojuegos 2D - Curso de Posgrado</strong> | 2021 - 2022</span><br>
-                                <span><strong>Japonés A1.1-1.2</strong> | 2018 - 2019</span>
+                            <div class="item">
+                                <h3 lang="es">UOC (Universidad Abierta de Cataluña)</h3>
+                                <h3 lang="en">UOC (Open University of Catalonia)</h3>
+                                <h3 lang="ca">UOC (Universitat Oberta de Catalunya)</h3>
+                                <span lang="es"><strong>Programación de Videojuegos 2D - Curso de Posgrado</strong> | 2021 - 2022<br></span>
+                                <span lang="en"><strong>2D Videogame Programming - Postgraduate Course</strong> | 2021 - 2022<br></span>
+                                <span lang="ca"><strong>Programació de Videojocs 2D - Curs de Postgrau</strong> | 2021 - 2022<br></span>
+                                <span lang="es"><strong>Japonés A1.1-1.2</strong> | 2018 - 2019</span>
+                                <span lang="en"><strong>Japanese A1.1-1.2</strong> | 2018 - 2019</span> 
+                                <span lang="ca"><strong>Japonès A1.1-1.2</strong> | 2018 - 2019</span>
                             </div>
-                            <div class="item" lang="en">
-                                <h3>UOC (Open University of Catalonia)</h3>
-                                <span><strong>2D Videogame Programming - Postgraduate Course</strong> | 2021 - 2022</span><br>
-                                <span><strong>Japanese A1.1-1.2</strong> | 2018 - 2019</span> 
-                            </div>
-                            <div class="item" lang="ca">
-                                <h3>UOC (Universitat Oberta de Catalunya)</h3>
-                                <span><strong>Programació de Videojocs 2D - Curs de Postgrau</strong> | 2021 - 2022</span><br>
-                                <span><strong>Japonès A1.1-1.2</strong> | 2018 - 2019</span>
-                             </div>
                               
-                            <div class="item" lang="es">
-                                <h3>Instituto Joan Brudieu</h3>
-                                <span><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Desarrollo de Aplicaciones Multiplataforma</strong> | 2020 - 2021</span><br>
-                                <span><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Administración Sistemas Informáticos en Red</strong> | 2018-2020</span>
-                                <!--<p>Explicar?</p>-->
-                            </div>
-                            <div class="item" lang="en">
-                                <h3>Joan Brudieu High School</h3>
-                                <span><strong><abbr name="Higher Education">HE</abbr> Multiplatform Application Development</strong> | 2020 - 2021</span><br>
-                                <span><strong><abbr name="Higher Education">HE</abbr> Network Computer Systems Administration</strong> | 2018-2020</span>
-                                <!--<p>Explicar?</p>-->
-                            </div>
-                            <div class="item" lang="ca">
-                                <h3>Institut Joan Brudieu</h3>
-                                <span><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Desenvolupament d'Aplicacions Multiplataforma</strong> | 2020 - 2021</span><br>
-                                <span><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Administració de Sistemes Informàtics en Xarxa</strong> | 2018-2020</span>
+                            <div class="item">
+                                <h3 lang="es">Instituto Joan Brudieu</h3>
+                                <h3 lang="en">Joan Brudieu High School</h3>
+                                <h3 lang="ca">Institut Joan Brudieu</h3>
+                                <span lang="es"><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Desarrollo de Aplicaciones Multiplataforma</strong> | 2020 - 2021<br></span>
+                                <span lang="en"><strong><abbr name="Higher Education">HE</abbr> Multiplatform Application Development</strong> | 2020 - 2021<br></span>
+                                <span lang="ca"><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Desenvolupament d'Aplicacions Multiplataforma</strong> | 2020 - 2021<br></span>
+                                <span lang="es"><strong><abbr name="Curso Formativo de Grado Superior">CFGS</abbr> Administración Sistemas Informáticos en Red</strong> | 2018-2020</span>
+                                <span lang="en"><strong><abbr name="Higher Education">HE</abbr> Network Computer Systems Administration</strong> | 2018-2020</span>
+                                <span lang="ca"><strong><abbr name="Curs Formatiu de Grau Superior">CFGS</abbr> Administració de Sistemes Informàtics en Xarxa</strong> | 2018-2020</span>
                                 <!--<p>Explicar?</p>-->
                             </div>
                               
-                            <div class="item" lang="es">
-                                <h3>EOI (Escuela Oficial de Idiomas)</h3>
-                                <span><strong>Inglés C1</strong> | 2019 - 2020</span>
-                            </div>
-                            <div class="item" lang="en">
-                                <h3>EOI (Official Language School)</h3>
-                                <span><strong>English C1</strong> | 2019 - 2020</span>
-                            </div>
-                            <div class="item" lang="ca">
-                                <h3>EOI (Escola Oficial d'Idiomes)</h3>
-                                <span><strong>Anglés C1</strong> | 2019 - 2020</span>
+                            <div class="item">
+                                <h3 lang="es">EOI (Escuela Oficial de Idiomas)</h3>
+                                <h3 lang="en">EOI (Official Language School)</h3>
+                                <h3 lang="ca">EOI (Escola Oficial d'Idiomes)</h3>
+                                <span lang="es"><strong>Inglés C1</strong> | 2019 - 2020</span>
+                                <span lang="en"><strong>English C1</strong> | 2019 - 2020</span>
+                                <span lang="ca"><strong>Anglés C1</strong> | 2019 - 2020</span>
                             </div>
                               
-                            <div class="item" lang="es">
-                                <h3>Instituto Pere Borrell</h3>
-                                <span><strong>Bachillerato de Humanidades</strong> | 2015 - 2017</span>
-                            </div>
-                            <div class="item" lang="en">
-                                <h3>Pere Borrell High School</h3>
-                                <span><strong>Humanities High School Diploma</strong> | 2015 - 2017</span>
-                            </div>
-                            <div class="item" lang="ca">
-                                <h3>IES Pere Borrell</h3>
-                                <span><strong>Batxillerat d'Humanitats</strong> | 2015 - 2017</span>
+                            <div class="item">
+                                <h3 lang="es">Instituto Pere Borrell</h3>
+                                <h3 lang="en">Pere Borrell High School</h3>
+                                <h3 lang="ca">IES Pere Borrell</h3>
+                                <span lang="es"><strong>Bachillerato de Humanidades</strong> | 2015 - 2017</span>
+                                <span lang="en"><strong>Humanities High School Diploma</strong> | 2015 - 2017</span>
+                                <span lang="ca"><strong>Batxillerat d'Humanitats</strong> | 2015 - 2017</span>
                             </div>
                         </article>
                         <hr>
@@ -601,12 +568,73 @@
                                 </a>
                             </div>
 
+                            <div class='item website'>
+                                <a href='https://inforcerdanya.com/' target='_blank'>
+                                    <img src="images/projects/Inforcerdanya.png">
+                                    <h1 lang="es">Página de Inforcerdanya</h1>
+                                    <h1 lang="en">Inforcerdanya Website</h1>
+                                    <h1 lang="ca">Pàgina d'Inforcerdanya</h1>
+                                    <span class="date"><i class="icon fa-solid fa-calendar-days"></i> 20/05/2019</span>
+                                    <p lang="es">Página web creada con Wordpress.</p>
+                                    <p lang="en">Website created with Wordpress.</p>
+                                    <p lang="ca">Pàgina web feta amb Wordpress.</p>
+                                    <div class='bottom'>
+                                        <div>
+                                            <span><strong>
+                                                <i class="icon fa-solid fa-gears"></i>
+                                                Wordpress CSS HTML JAVASCRIPT
+                                            </strong></span>
+                                        </div>
+                                        <div>
+                                            <i class="icon fa-solid fa-tags"></i>
+                                            wordpress, responsive, website
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!--<div class='item tags'>
+                                <a href='url' target='_blank'>
+                                    <img src="">
+                                    <form action="demo_link" target="_blank">
+                                        <button class="demo-button">
+                                            <span lang="es">Text</span>
+                                            <span lang="en">Text</span>
+                                            <span lang="ca">Text</span>
+                                        </button>
+                                    </form>
+                                    <h1>name</h1>
+                                    <span class="date"><i class="icon fa-solid fa-calendar-days"></i> date</span>
+                                    <p>description</p>
+                                    <div class='bottom'>
+                                        <div>
+                                            <span><strong>
+                                                <i class="icon fa-solid fa-gears"></i>
+                                                language
+                                            </strong></span>
+                                            <span>
+                                                <i class="icon fa-solid fa-star"></i>
+                                                stars
+                                            </span>
+                                            <span>
+                                                <i class="icon fa-solid fa-code-fork"></i>
+                                                forks
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="icon fa-solid fa-tags"></i>
+                                            topics
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>-->
+
                         </article>
                     </div>
                 </section>
                 <button id="scroll-button"><i class="icon fa fa-angles-up"></i></button>
             </main>
-            <footer>
+            <footer class="print-hide">
                 <span lang="es">Creada por Dana Gomez Balada</span>
                 <span lang="en">Created by Dana Gomez Balada</span>
                 <span lang="ca">Creada per Dana Gomez Balada</span>

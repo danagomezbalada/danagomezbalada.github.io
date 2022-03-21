@@ -520,7 +520,21 @@ section .print-links {
 
 section .showmore {
     display: inline-block;
-    width: 100%;
+    width: 80%;
+    background-color: var(--bg-sidebar);
+    color: var(--color-text);
+    transition: all 0.2s ease-in;
+    will-change: transform;
+    
+    border: 2px solid gray;
+    border-radius: 0.25em;
+    padding: 5px 20px;
+    margin: auto;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+section .showmore:hover, section .showmore:active {
+    background-color: grey;
 }
 
 /* Curriculum section */
@@ -861,13 +875,12 @@ footer {
 }
 
 @media print {
+    .print-hide {display:none !important}
+    .hide {display: none !important;}
+
     #container {
         display: block;
         color: black !important;
-    }
-
-    header {
-        display: none;
     }
 
     main {
@@ -923,14 +936,12 @@ footer {
         color: black !important;
     }
     
-    aside .contact {display: none;}
     aside .contact-white{
         display: block;
         text-align: right;
         margin-right: 5px;
     }
     
-    aside .social {display:none;}
     aside .print-social {
         display: inline-block;
         text-align: justify;
@@ -945,7 +956,6 @@ footer {
         display: block;
     }
     section hr {display: none;}
-    section #main-nav{display: none;}
     section .tabcontent{
         display: block;
         padding: 0 !important;
@@ -962,6 +972,7 @@ footer {
 
     section .article .title{
         font-size: 16px;
+        page-break-inside: avoid !important;
     }
     section .article .title > * {
         color: black !important;
@@ -996,6 +1007,5 @@ footer {
     }
 
     #scroll-button {display: none !important;}
-    footer {display: none;}
 
 }

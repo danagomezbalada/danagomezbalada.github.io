@@ -29,7 +29,6 @@ $(document).ready(function () {
 
     // Functions for integrations with GitHub and GitLab projects
     function createDIV(item) {
-        // Puts repo information into div
         $(".project." + item.article).append(`
             <div class='item ${item.classes}'>
                 <a href='${item.web_url}' target='_blank'>
@@ -137,7 +136,7 @@ $(document).ready(function () {
                 langs[1] = "";
                 langs[2] = "";
                 link_img = "images/projects/MobileGame.png";
-                demo_link = "https://natius-dev.gitlab.io/colonitzacio-i-els-venuts/inicio/";
+                demo_link = "";
             }
             else if (item.name.includes("potatoapp")){
                 langs[0] = "";
@@ -317,7 +316,7 @@ $(document).ready(function () {
                 current.children(".item" + id + ":nth-of-type(n+8)").addClass("hide").hide();
                 current.append(`
                     <button class="showmore more">
-                        + Show More
+                        <i class="icon fa-solid fa-plus"></i>
                     </button>
                 `);
             }
@@ -336,13 +335,13 @@ $(document).ready(function () {
                 thisParent.find('.hide').css("transition", "none").show(700, function(){
                     $(this).css("transition", "all 0.2s ease-in");
                 });
-                current.toggleClass('more', 'less').html('- Show less');
+                current.toggleClass('more', 'less').html(`<i class="icon fa-solid fa-minus"></i>`);
             }
             else {
                 thisParent.find('.hide').css("transition", "none").hide(700, function(){
                     $(this).css("transition", "all 0.2s ease-in");
                 });
-                current.toggleClass('more', 'less').html('+ Show more');
+                current.toggleClass('more', 'less').html(`<i class="icon fa-solid fa-plus"></i>`);
             }
         });
     }
