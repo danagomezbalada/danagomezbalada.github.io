@@ -595,12 +595,21 @@ section .article .item a:hover{
 section .article .list {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
 }
+section .article .list.no-title {
+    margin-top: 15px;
+}
+
 section .article .list .item {
     flex: 1;
     flex-basis: calc(33.3333% - 2%);
+}
+section .article .list .item h4 {
+    margin: 0 0 5px 0;
+}
+section .article .list .item p {
+    margin: 0;
 }
 
 /* Portfolio section */
@@ -855,6 +864,11 @@ footer {
     section .tabcontent {
         padding: 20px !important;
     }
+
+    section .article .list .item {
+        flex-basis: 70%;
+    }
+
     section .project {
         flex-flow: column nowrap;
         align-items: center;
@@ -865,6 +879,7 @@ footer {
     section .project .item img {
         height: 100%;
     }
+
 }
 
 
@@ -1002,8 +1017,9 @@ footer {
         font-size: 11pt;
     }
 
-    section .article .list .item h3{
+    section .article .list .item h4 {
         font-size: 11pt;
+        font-weight: normal;
     }
 
     #scroll-button {display: none !important;}

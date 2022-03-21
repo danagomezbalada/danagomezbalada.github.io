@@ -67,30 +67,30 @@ $(document).ready(function () {
 
         if (item.name.includes("PEC")) {
             if (item.name.includes("1")) {
-                langs[0] = "Juego 2D de Unity de la PEC 1 de la UOC";
-                langs[1] = "UOC PEC 1 Unity 2D Game";
-                langs[2] = "Joc 2D de Unity de la PEC 1 de la UOC";
+                langs[0] = "Este juego está basado en el duelo de insultos del juego \"Monkey Island\". Ha sido el primer proyecto del curso de Progromación de Videojuegos 2D de la UOC.";
+                langs[1] = "This game is based on the duel of insult from the game \"Monkey Island\". It was the first project of the 2D Videogame Programming course from the UOC.";
+                langs[2] = "Aquest joc està basat en el duel d'insults del joc \"Monkey Island\". Ha sigut el primer projecte del curs de Programació de Videojocs 2D de la UOC.";
                 link_img = "images/projects/UOC-PEC1.png";
                 demo_link = "https://danagomez.itch.io/pec-1-monkey-island";
             }
             else if (item.name.includes("2")) {
-                langs[0] = "Juego 2D de Unity de la PEC 2 de la UOC";
-                langs[1] = "UOC PEC 2 Unity 2D Game";
-                langs[2] = "Joc 2D de Unity de la PEC 2 de la UOC";
+                langs[0] = "Este juego es una recreación del primer nivel del juego para la NES \"Super Mario Bros\". Ha sido el segundo proyecto del curso de Programación de Videojuegos 2D de la UOC.";
+                langs[1] = "This game is a recreation of the first level of the NES game \"Super Mario Bros\". It was the second project of the 2D Videogame Programming course from the UOC.";
+                langs[2] = "Aquest joc es una recreació del primer nivell del joc per la NES \"Super Mario Bros\". Ha sigut el segon projecte del curs de Programació de Videojocs 2D de la UOC.";
                 link_img = "images/projects/UOC-PEC2.png";
                 demo_link = "https://danagomez.itch.io/pec-2-super-mario-bros";
             }
             else if (item.name.includes("3")) {
-                langs[0] = "Juego 2D de Unity de la PEC 3 de la UOC";
-                langs[1] = "UOC PEC 3 Unity 2D Game";
-                langs[2] = "Joc 2D de Unity de la PEC 3 de la UOC";
+                langs[0] = "Este juego es un juego de artilleria basado en el \"Scorched Earth\" y \"Worms\". Ha sido el tercer proyecto del curso de Programación de Videojuegos 2D de la UOC.";
+                langs[1] = "This game is an artillery game based on \"Scorched Earth\" and \"Worms\". It was the third project of the 2D Videogame Programming course from the UOC.";
+                langs[2] = "Aquest joc es un joc d'artilleria basat en el Scorched Earth i Worms. Ha sigut el tercer projecte del curs de Programació de Videojocs 2D de la UOC.";
                 link_img = "images/projects/UOC-PEC3.png";
                 demo_link = "https://danagomez.itch.io/pec-3-scorched-earth-worms";
             }
             else if (item.name.includes("4")) {
-                langs[0] = "Juego 2D de Unity de la PEC 4 de la UOC";
-                langs[1] = "UOC PEC 4 Unity 2D Game";
-                langs[2] = "Joc 2D de Unity de la PEC 4 de la UOC";
+                langs[0] = "Este juego es un juego de tipo RPG con una historia, basado en los clásicos de \"RPG Maker\". Ha sido el último proyecto del curso de Programación de Videojuegos 2D de la UOC.";
+                langs[1] = "This game is an RPG-style game with a story, based on the \"RPG Maker\" classics. It was the last project of the 2D Videogame Programming course from the UOC.";
+                langs[2] = "Aquest joc es un joc tipus RPG amb una història, basat ens els clàssics de \"RPG Maker\". Ha sigut l'últim projecte del curs de Programació de Videojocs 2D de la UOC.";
                 link_img = "images/projects/UOC-PEC4.png";
                 demo_link = "https://danagomez.itch.io/pec-4-projecte-final";
             }
@@ -598,4 +598,3 @@ $(document).ready(function () {
 
 // TODO: Add accordions for extra text in experience and education
 // TODO: Add descriptions for each project
-// TODO: Add projects that are not in GitHub / GitLab (sewermapper, inforcerdanya website, etc...)
