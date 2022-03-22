@@ -67,63 +67,51 @@ $(document).ready(function () {
 
         if (item.name.includes("PEC")) {
             if (item.name.includes("1")) {
-                langs[0] = `Este juego está basado en el duelo de insultos del juego \"Monkey Island\". Ha sido el primer proyecto del curso de Progromación de Videojuegos 2D de la UOC.
-                <br><strong>Algunos aspectos clave</strong>: escenas de juego, máquina de estados, gráficos y animaciones, causalidad...`;
-                langs[1] = `This game is based on the duel of insult from the game \"Monkey Island\". It was the first project of the 2D Videogame Programming course from the UOC.
-                <br><strong>Some key aspects</strong>: game scenes, state machine, graphics and animations, causality...`;
-                langs[2] = `Aquest joc està basat en el duel d'insults del joc \"Monkey Island\". Ha sigut el primer projecte del curs de Programació de Videojocs 2D de la UOC.
-                <br><strong>Alguns aspectes clau</strong>: escenes de joc, màquina d'estats, gràfics i animacions, causalitat...`;
+                langs[0] = "Este juego está basado en el duelo de insultos del juego \"Monkey Island\". Ha sido el primer proyecto del curso de Progromación de Videojuegos 2D de la UOC.";
+                langs[1] = "This game is based on the duel of insult from the game \"Monkey Island\". It was the first project of the 2D Videogame Programming course from the UOC.";
+                langs[2] = "Aquest joc està basat en el duel d'insults del joc \"Monkey Island\". Ha sigut el primer projecte del curs de Programació de Videojocs 2D de la UOC.";
                 link_img = "images/projects/UOC-PEC1.png";
                 demo_link = "https://danagomez.itch.io/pec-1-monkey-island";
             }
             else if (item.name.includes("2")) {
-                langs[0] = `Este juego es una recreación del primer nivel del juego para la NES \"Super Mario Bros\". Ha sido el segundo proyecto del curso de Programación de Videojuegos 2D de la UOC.
-                <br><strong>Algunos aspectos clave</strong>: contadores de puntos y tiempo, inteligencia artificial básica, físicas, máquina de estados, probabilidad y causalidad...`;
-                langs[1] = `This game is a recreation of the first level of the NES game \"Super Mario Bros\". It was the second project of the 2D Videogame Programming course from the UOC.
-                <br><strong>Some key aspects</strong>: point and time counters, basic artificial intelligence, physics, state machine, probability and causality...`;
-                langs[2] = `Aquest joc es una recreació del primer nivell del joc per la NES \"Super Mario Bros\". Ha sigut el segon projecte del curs de Programació de Videojocs 2D de la UOC.
-                <br><strong>Alguns aspectes clau</strong>: comptadors de punts i temps, intel·ligència artificial bàsica, físiques, màquina d'estats, probabilitat i causalitat...`;
+                langs[0] = "Este juego es una recreación del primer nivel del juego para la NES \"Super Mario Bros\". Ha sido el segundo proyecto del curso de Programación de Videojuegos 2D de la UOC. Algunos aspectos clave: contadores de puntos y tiempo, inteligencia artificial básica, físicas, máquina de estados...";
+                langs[1] = "This game is a recreation of the first level of the NES game \"Super Mario Bros\". It was the second project of the 2D Videogame Programming course from the UOC. Some key aspects: point and time counters, basic artificial intelligence, physics, state machine....";
+                langs[2] = "Aquest joc es una recreació del primer nivell del joc per la NES \"Super Mario Bros\". Ha sigut el segon projecte del curs de Programació de Videojocs 2D de la UOC. Alguns aspectes clau: comptadors de punts i temps, intel·ligència artificial bàsica, físiques,";
                 link_img = "images/projects/UOC-PEC2.png";
                 demo_link = "https://danagomez.itch.io/pec-2-super-mario-bros";
             }
             else if (item.name.includes("3")) {
-                langs[0] = `Este juego es un juego de artilleria basado en el \"Scorched Earth\" y \"Worms\". Ha sido el tercer proyecto del curso de Programación de Videojuegos 2D de la UOC.
-                <br><strong>Algunos aspectos clave</strong>: generación automática de nivel, sistema de partículas, predicción de trayectoria, inteligencia artifical...`;
-                langs[1] = `This game is an artillery game based on \"Scorched Earth\" and \"Worms\". It was the third project of the 2D Videogame Programming course from the UOC.
-                <br><strong>Some key aspects</strong>: automatic level generation, particle system, trajectory prediction, artificial intelligence...`;
-                langs[2] = `Aquest joc es un joc d'artilleria basat en el Scorched Earth i Worms. Ha sigut el tercer projecte del curs de Programació de Videojocs 2D de la UOC.
-                <br><strong>Alguns aspectes clau</strong>: generació automàtica de nivell, sistema de partícules, predicció de trajectòria, intel·ligència artificial...`;
+                langs[0] = "Este juego es un juego de artilleria basado en el \"Scorched Earth\" y \"Worms\". Ha sido el tercer proyecto del curso de Programación de Videojuegos 2D de la UOC. Algunos aspectos clave: generación automática de nivel, sistema de partículas, predicción de trayectoria, inteligencia artifical...";
+                langs[1] = "This game is an artillery game based on \"Scorched Earth\" and \"Worms\". It was the third project of the 2D Videogame Programming course from the UOC. Some key aspects: automatic level generation, particle system, trajectory prediction, artificial intelligence...";
+                langs[2] = "Aquest joc es un joc d'artilleria basat en el Scorched Earth i Worms. Ha sigut el tercer projecte del curs de Programació de Videojocs 2D de la UOC. Alguns aspectes clau: generació automàtica de nivell, sistema de partícules, predicció de trajectòria, intel·ligència artificial...";
                 link_img = "images/projects/UOC-PEC3.png";
                 demo_link = "https://danagomez.itch.io/pec-3-scorched-earth-worms";
             }
             else if (item.name.includes("4")) {
-                langs[0] = `Un juego 2D de Unity inspirado por los clasicos juegos JRPG de RPG Maker. Controlas a una universitaria que es transportada a un misterioso mundo de sueños tras mirar un video maldito. Puedes explorar, interactuar y charlar para descubrir más sobre el mundo y la historia. Eso sí, ten cuidado cuando llegues al mundo de los sueños... (El juego está en catalán!)
-                <br><strong>Algunos aspectos clave</strong>: sistema de guardar y cargar partida, menú de pausa completo y inventario, barra de resistencia, daño y muerte, diálogo con múltiples opciones, múltiples finales, interacciones con el entorno y personajes, cutscenes, inteligencia artificial, pantalla de creditos...`;
-                langs[1] = `A Unity 2D game inspired by the classic JRPG games from RPG Maker. You play as a college student who is transported into a mysterious dream world after watching a cursed video. You can explore, interact and chat to find out more about the world and the story. Just be careful when you reach the dream world... (The game is in Catalan!)
-                <br><strong>Some key aspects</strong>: game saving and loading system, complete pause menu and inventory, stamina bar, damage and death, multiple choice dialogue, multiple endings, interactions with the environment and characters, cutscenes, artificial intelligence, credits screen...`;
-                langs[2] = `Un joc 2D de Unity inspirat per els clàssics jocs JRPG de RPG Maker. Control·les a una universitària que és transportada a un misteriòs món de somnis després de veure un video maleït. Pots explorar, interactuar i parlar per descobrir més sobre el món i la història. Això sí, ves amb compte quan arribis al món dels somnis...
-                <br><strong>Alguns aspectes clau</strong>: sistema de guardar i carregar partida, menú de pausa complet i inventari, barra de resistència, dany i mort, diàleg amb varies opcions, varis finals, interaccions amb l'entorn i personatges, cutscenes, intel·ligència artificial, pantalla de crèdits...`;
+                langs[0] = "Un juego 2D de Unity inspirado por los clasicos juegos JRPG de RPG Maker. Controlas a una universitaria que es transportada a un misterioso mundo de sueños tras mirar un video maldito. Puedes explorar, interactuar y charlar para descubrir más sobre el mundo y la historia. Eso sí, ten cuidado cuando llegues al mundo de los sueños... (El juego está en catalán!)";
+                langs[1] = "A Unity 2D game inspired by the classic JRPG games from RPG Maker. You play as a college student who is transported into a mysterious dream world after watching a cursed video. You can explore, interact and chat to find out more about the world and the story. Just be careful when you reach the dream world... (The game is in Catalan!)";
+                langs[2] = "Un joc 2D de Unity inspirat per els clàssics jocs JRPG de RPG Maker. Control·les a una universitària que és transportada a un misteriòs món de somnis després de veure un video maleït. Pots explorar, interactuar i parlar per descobrir més sobre el món i la història. Això sí, ves amb compte quan arribis al món dels somnis...";
                 link_img = "images/projects/UOC-PEC4.png";
                 demo_link = "https://danagomez.itch.io/pec-4-projecte-final";
             }
         }
         else if (item.name.includes("final_proj")){
             if (item.name.includes("java")){
-                langs[0] = `Parte de una aplicación de consulta de actividades. Recibe el fichero de texto generado por el programa de Visual Basic, lo convierte en ficheros de XML y los sube a un servidor web haciendo uso del protocolo FTP. Para hacer la conversión con más seguridad, hace servir orientación a objectos. También obtiene datos de Firebase y actualiza la BBDD local con estos.`;
-                langs[1] = `Part of an activity query application. It recieves the text file generated by the Visual Basic application, transforms it into various XML files and uploads them to a web server making use of the FTP protocol. To make the conversion safer, it uses object orientation. It also obtains data from Firebase and updates the local database with it.`;
-                langs[2] = `Part d'una aplicació de consulta d’activitats. Rep el fitxer de text generat per el programa de Visual Basic, el converteix a fitxers de XML i els puja a un servidor web fent ús del protocol FTP. Per tal de fer la conversió amb més seguretat, fa servir orientació a objectes. També obté dades de Firebase i actualitza la BBDD local amb aquestes.`;
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
                 link_img = "images/projects/ProjFInalJava.png";
             }
             else if (item.name.includes("desktop")){
-                langs[0] = `Parte de una aplicación de consulta de actividades. Se encarga de la gestión de la BBDD. La interfície es simple y efectiva, haciendo clic a "Administrar Activitats" podemos gestionar las tablas de la BBDD. Seleccionando alguna de las opciones, nos mostrarà una tabla con los registros actuales i botones para añadir, consultar, editar o borrar registros. El programa tiene un botón que nos permite generar un fichero de text que posteriormente será tratado en el programa de Java.`;
-                langs[1] = `Part of an activity query application. It is responsible for the management of the database. The UI is simple and effective, clicking "Administrar Activitats" we can manage the database tables. Selecting one of the options, it will display a table with the current records and buttons to add, read, edit or delete records. The application has a button that allows us to generate a text file that will later be managed with the Java application.`;
-                langs[2] = `Part d'una aplicació de consulta d’activitats. S’encarrega de la gestió de la BBDD. La interfície és simple i efectiva, fent clic a “Administrar Activitats” podem gestionar les taules de la BBDD. Seleccionant alguna de les opcions, ens mostrarà una taula amb els registres actuals i botons per afegir, consultar, editar o esborrar registres. El programa té un botó que ens permet generar un fitxer de text que posteriorment serà tractat en el programa de Java.`;
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
                 link_img = "images/projects/ProjFinalDesktop.png";
             }
             else {
-                langs[0] = `Parte de una aplicación de consulta de actividades. Al entrar en la aplicación y una vez hecho login, veremos una pantalla con los eventos que recibe del archivo XML (que ha sido cargado en un servidor web anteriormente con Java). Se mostrará una lista resumida de los próximos eventos, en esta lista resumida haremos clic en un elemento para acceder a una lista de sus actividades. Los usuarios de la aplicación, aparte de poder buscar actividades, pueden realizar una reserva para cualquier actividad. Todos los datos se guardan en una BBDD de Firebase.`;
-                langs[1] = `Part of an activity query application. Upon entering the application and once logged in, we will see a screen with the events received from the XML file (which has been previously loaded on a web server with Java). A summary list of upcoming events will be displayed, in this summary list we will click on an item to access a list of its activities. Users of the application, apart from being able to search for activities, can make a reservation for any activity. All data is stored in a Firebase database.`;
-                langs[2] = `Part d'una aplicació de consulta d’activitats. En entrar a l'aplicació i una vegada fet login, veurem una pantalla amb els esdeveniments que rep del fitxer XML (que ha estat carregat a un servidor web anteriorment amb Java). Es mostrarà una llista resumida dels propers esdeveniments, en aquesta llista resumida farem clic a un element per accedir a una llista de les seves activitats. Els usuaris de l’aplicació, a part de poder cercar activitats, poden fer una reserva per qualsevol activitat. Totes les dades es guarden en una BBDD de Firebase.`;
+                langs[0] = "";
+                langs[1] = "";
+                langs[2] = "";
                 link_img = "images/projects/ProjFinalAndroid.PNG";
             }
             demo_link = "files/Projecte_DAM_JDS.pdf#toolbar=0";
@@ -148,7 +136,7 @@ $(document).ready(function () {
                 langs[1] = "";
                 langs[2] = "";
                 link_img = "images/projects/MobileGame.png";
-                demo_link = "files/Colonitzacio-i-els-venuts.pdf#toolbar=0";
+                demo_link = "";
             }
             else if (item.name.includes("potatoapp")){
                 langs[0] = "";
@@ -172,12 +160,9 @@ $(document).ready(function () {
                 demo_link = "files/Projecte-Escacs_DanaGomez.pdf#toolbar=0";
             }
             else {
-                langs[0] = `Una página web creada con HTML5, CSS3, JavaScript y jQuery. Está completamente desarrollada y mantenida por mí.
-                <br><strong>Algunos aspectos clave</strong>: varios idiomas, botón de imprimir/descargar, modo oscuro, pestaña de proyectos (donde los proyectos están categorizados y ordenados por fecha), filtros de proyecto, animaciones, cookies temporales, etc...`;
-                langs[1] = `A website created with HTML5, CSS3, JavaScript and jQuery. It is fully developed and mainteined by me.
-                <br><strong>Some key aspects</strong>: various languages, print/download button, dark mode, projects tab (where projects are categorized and ordered by date), project filters, animations, temporary cookies, etc...`;
-                langs[2] = `Una pàgina web creada amb HTML5, CSS3, JavaScript i jQuery. Està totalment desenvolupada i mantinguda per mi.
-                <br><strong>Alguns aspectes clau</strong>: varis llanguatges, botó de imprimir/descarregar, mode oscur, pestanya de projectes (on els projectes estan categoritzats i ordenats per data), filtres de projecte, animacions, cookies temporals, etc...`;
+                langs[0] = "Una página web creada con HTML5, CSS3, JavaScript y jQuery. Está completamente desarrollada y mantenida por mí. Algunos aspectos clave: varios idiomas, botón de imprimir/descargar, modo oscuro, pestaña de proyectos (donde los proyectos están categorizados y ordenados por fecha), filtros de proyecto, animaciones, cookies temporales, etc...";
+                langs[1] = "A website created with HTML5, CSS3, JavaScript and jQuery. It is fully developed and mainteined by me. Some key features include: various languages, print/download button, dark mode, projects tab (where projects are categorized and ordered by date), project filters, animations, temporary cookies, etc...";
+                langs[2] = "Una pàgina web creada amb HTML5, CSS3, JavaScript i jQuery. Està totalment desenvolupada i mantinguda per mi. Alguns aspectes claus: varis llanguatges, botó de imprimir/descarregar, mode oscur, pestanya de projectes (on els projectes estan categoritzats i ordenats per data), filtres de projecte, animacions, cookies temporals, etc...";
                 link_img = "images/screenshot.jpg";
             }
         }
