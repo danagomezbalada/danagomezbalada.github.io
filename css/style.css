@@ -386,6 +386,9 @@ aside .title h2 {
 aside .title .print-website{
     display: none;
 }
+aside .title .print-website a {
+    color: black !important;
+}
 
 aside .desc {
     width: 85%;
