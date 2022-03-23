@@ -540,11 +540,10 @@ $(document).ready(function () {
     // Function to run on page load
     $(document).ready(function () {
         // Set colors
-        //var colorsCookie = getCookie('colors'), 
-            var switchElem = $('#switch'), 
+        var colorsCookie = getCookie('colors'), 
+            switchElem = $('#switch'), 
             docBody = $(document.body);
-        /*if (colorsCookie){
-            console.log("Colors cookie found");
+        if (colorsCookie){
             if (colorsCookie == 'dark'){
                 docBody.attr('class', 'dark-theme');
                 switchElem.prop("checked", false);
@@ -554,42 +553,33 @@ $(document).ready(function () {
                 switchElem.prop("checked", true);
             }
         }
-        else {*/
+        else {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
                 docBody.attr('class', 'dark-theme');
                 switchElem.prop("checked", false);
-                console.log("Dark mode found");
             }
             else {
                 docBody.attr('class', 'light-theme');
                 switchElem.prop("checked", true);
-                console.log("Light mode found");
             }
-        //}
+        }
 
         // Set language
         $('[lang]').hide();
-        var language = "en";
-            //langCookie = getCookie('lang');
-        /*if (langCookie){
+        var language = "en", 
+            langCookie = getCookie('lang');
+        if (langCookie)
             language = langCookie;
-            console.log("Lang cookie found");
-        }
-        else {*/
+        else {
             const langs = [];
             $('#lang-switch option').each(function() {
                 langs.push(this.value);
             });
             
             var current = navigator.language.split('-')[0];
-            if (langs.includes(current)){
-                console.log("Supported lang found");
+            if (langs.includes(current))
                 language = current;
-            }
-            else {
-                console.log("No lang found");
-            }
-        //}
+        }
         $('#lang-switch').val(language).change();
 
         loadLanguageSelector();
