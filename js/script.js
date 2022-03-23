@@ -540,10 +540,10 @@ $(document).ready(function () {
     // Function to run on page load
     $(document).ready(function () {
         // Set colors
-        var colorsCookie = getCookie('colors'), 
-            switchElem = $('#switch'), 
+        //var colorsCookie = getCookie('colors'), 
+            var switchElem = $('#switch'), 
             docBody = $(document.body);
-        if (colorsCookie){
+        /*if (colorsCookie){
             console.log("Colors cookie found");
             if (colorsCookie == 'dark'){
                 docBody.attr('class', 'dark-theme');
@@ -554,7 +554,7 @@ $(document).ready(function () {
                 switchElem.prop("checked", true);
             }
         }
-        else {
+        else {*/
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
                 docBody.attr('class', 'dark-theme');
                 switchElem.prop("checked", false);
@@ -565,17 +565,17 @@ $(document).ready(function () {
                 switchElem.prop("checked", true);
                 console.log("Light mode found");
             }
-        }
+        //}
 
         // Set language
         $('[lang]').hide();
-        var language = "en", 
-            langCookie = getCookie('lang');
-        if (langCookie){
+        var language = "en";
+            //langCookie = getCookie('lang');
+        /*if (langCookie){
             language = langCookie;
             console.log("Lang cookie found");
         }
-        else {
+        else {*/
             const langs = [];
             $('#lang-switch option').each(function() {
                 langs.push(this.value);
@@ -589,7 +589,7 @@ $(document).ready(function () {
             else {
                 console.log("No lang found");
             }
-        }
+        //}
         $('#lang-switch').val(language).change();
 
         loadLanguageSelector();
