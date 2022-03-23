@@ -544,6 +544,7 @@ $(document).ready(function () {
             switchElem = $('#switch'), 
             docBody = $(document.body);
         if (colorsCookie){
+            console.log("Colors cookie found");
             if (colorsCookie == 'dark'){
                 docBody.attr('class', 'dark-theme');
                 switchElem.prop("checked", false);
@@ -557,10 +558,12 @@ $(document).ready(function () {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
                 docBody.attr('class', 'dark-theme');
                 switchElem.prop("checked", false);
+                console.log("Dark mode found");
             }
             else {
                 docBody.attr('class', 'light-theme');
                 switchElem.prop("checked", true);
+                console.log("Light mode found");
             }
         }
 
@@ -568,8 +571,10 @@ $(document).ready(function () {
         $('[lang]').hide();
         var language = "en", 
             langCookie = getCookie('lang');
-        if (langCookie)
+        if (langCookie){
             language = langCookie;
+            console.log("Lang cookie found");
+        }
         else {
             const langs = [];
             $('#lang-switch option').each(function() {
@@ -577,8 +582,13 @@ $(document).ready(function () {
             });
             
             var current = navigator.language.split('-')[0];
-            if (langs.includes(current))
+            if (langs.includes(current)){
+                console.log("Supported lang found");
                 language = current;
+            }
+            else {
+                console.log("No lang found");
+            }
         }
         $('#lang-switch').val(language).change();
 
