@@ -349,6 +349,9 @@ aside {
     display: flex;
     flex-flow: column;
     text-align: center;
+
+    scrollbar-color: var(--color-headings) gray;
+    scrollbar-width: thin;
 }
 #side-container {margin: auto;}
 
@@ -485,6 +488,9 @@ section {
     flex-grow: 1;
     overflow-y: auto;
     height: inherit;
+    
+    scrollbar-color: var(--color-headings) gray;
+    scrollbar-width: thin;
 }
 section hr {
     margin-right: 80px;
