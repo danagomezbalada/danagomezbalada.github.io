@@ -240,6 +240,9 @@ $(document).ready(function () {
         
         repos.sort(function (a,b){return new Date(b.created_at) - new Date(a.created_at);});
         repos.forEach(function (item, index) {
+            if (!item.article) {
+                return;
+            }
             createDIV(item);
         });
 
@@ -623,7 +626,7 @@ $(document).ready(function () {
                     selected.click();
                 }
         });
-        $('#curriculum .item.hide').hide();
+        $('#curriculum .hide').hide();
 
         // Load repositories
         getRepos(REPOS);
