@@ -901,6 +901,7 @@ footer {
 @media print {
     .print-hide {display:none !important}
     .hide {display: none !important;}
+    .no-break-print {page-break-inside: avoid !important;}
 
     #container {
         display: block;
