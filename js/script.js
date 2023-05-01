@@ -246,14 +246,15 @@ $(document).ready(function () {
             createDIV(item);
         });
 
-        $('#portfolio .project').sort(function (a, b) {
-            return new Date($(b).find(".date:first").text()) - new Date($(a).find(".date:first").text());
-        }).appendTo('#portfolio');
+        // Sorts the portfolio sections depending on which section has the latest updated project
+        // $('#portfolio .project').sort(function (a, b) {
+        //     return new Date($(b).find(".date:first").text()) - new Date($(a).find(".date:first").text());
+        // }).appendTo('#portfolio');
 
         hideItems();
 
         $('#lang-switch').val($('#lang-switch').val()).change();
-        $('#curriculum .item.hide').hide();
+        $('#curriculum .hide').hide();
     }
     async function getGitLab(repos) {
         const GITLAB_API = "https://gitlab.com/api/v4/";
